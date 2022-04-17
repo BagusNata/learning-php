@@ -98,7 +98,7 @@
               <td>                            <?php echo $data['no_hp']          ?> </td>
               <td>                            <?php echo $data['email']          ?> </td>
               <td style="text-align: center;"> 
-                <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/b_edit.png"> Edit </a>
+                <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
               </td>
             </tr>
             <?php } ?>

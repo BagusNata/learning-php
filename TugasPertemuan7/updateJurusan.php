@@ -88,7 +88,7 @@
               <td style='text-align:center;'> <?php echo $data['kode_jurusan']   ?> </td>
               <td style='text-align:center;'> <?php echo $data['nama_jurusan']  ?> </td>
               <td style="text-align: center;"> 
-                <a style="color:black;" href="editJurusan.php?kode_jurusan=<?php echo $data['kode_jurusan']?>" class="btn-edit"> <img src="Assets/b_edit.png"> Edit </a>
+                <a style="color:black;" href="editJurusan.php?kode_jurusan=<?php echo $data['kode_jurusan']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
               </td>
             </tr>
             <?php } ?>

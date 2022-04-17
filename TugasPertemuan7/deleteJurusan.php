@@ -88,7 +88,7 @@
               <td style='text-align:center;'> <?php echo $data['kode_jurusan']   ?> </td>
               <td style='text-align:center;'> <?php echo $data['nama_jurusan']  ?> </td>
               <td style="text-align: center;"> 
-                <a style="color:black;" href="proses_delete_jurusan.php?kode_jurusan=<?php echo $data['kode_jurusan']?>" class="btn-del"> <img src="Assets/b_drop.png"> Delete </a>
+                <a style="color:black;" href="proses_delete_jurusan.php?kode_jurusan=<?php echo $data['kode_jurusan']?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
               </td>
             </tr>
             <?php } ?>

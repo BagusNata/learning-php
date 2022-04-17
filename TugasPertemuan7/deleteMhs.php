@@ -98,7 +98,7 @@
               <td>                            <?php echo $data['no_hp']          ?> </td>
               <td>                            <?php echo $data['email']          ?> </td>
               <td style="text-align: center;"> 
-                <a style="color:black;" href="proses_delete_mhs.php?nim=<?php echo $data['nim']?>" class="btn-del"> <img src="Assets/b_drop.png"> Delete </a>
+                <a style="color:black;" href="proses_delete_mhs.php?nim=<?php echo $data['nim']?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
               </td>
             </tr>
             <?php } ?>
