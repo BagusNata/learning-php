@@ -98,7 +98,7 @@
               <td>                            <?php echo $data['no_hp']          ?> </td>
               <td>                            <?php echo $data['email']          ?> </td>
               <td style="text-align: center;"> 
-                <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>"> <img src="Assets/b_edit.png"> Edit </a>
+                <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/b_edit.png"> Edit </a>
               </td>
             </tr>
             <?php } ?>
@@ -108,7 +108,34 @@
 
     </div>
 
+    <!-- Untuk merefresh -->
+    <?php if (isset ($_GET['m'])) : ?>
+      <div class="flash-data" data-flashdata="<?= $_GET['m']; ?>"></div>
+    <?php endif; ?>
+
     <!-- Optional JavaScript -->
+    <!-- SweetAlert2 --> 
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script>
+      $('.btn-edit').on('click', function(e) {
+          e.preventDefault();
+          const href = $(this).attr('href')
+          Swal.fire({
+              title : "Are You Sure?",
+              text  : 'You will redirected to edit page!',
+              icon  : 'warning',
+              showCancelButton  : true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor : '#d33',
+              confirmButtonText : 'Yes',
+          }). then ((result) => {
+                  if (result.value) {
+                      document.location.href = href;
+                  }
+          })
+      })
+      </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

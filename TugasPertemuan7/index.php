@@ -106,7 +106,7 @@
               <td>                            <?php echo $data['no_hp']          ?> </td>
               <td>                            <?php echo $data['email']          ?> </td>
               <td style="text-align: center;"> 
-                <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-del"> <img src="Assets/b_edit.png"> Edit </a>
+                <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/b_edit.png"> Edit </a>
               </td>
               <td style="text-align: center;"> 
                 <a style="color:black;" href="proses_delete_mhs.php?nim=<?php echo $data['nim']?>" class="btn-del"> <img src="Assets/b_drop.png"> Delete </a>
@@ -130,6 +130,24 @@
     <script src="jquery-3.6.0.min.js"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script>
+      $('.btn-edit').on('click', function(e) {
+          e.preventDefault();
+          const href = $(this).attr('href')
+          Swal.fire({
+              title : "Are You Sure?",
+              text  : 'You will redirected to edit page!',
+              icon  : 'warning',
+              showCancelButton  : true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor : '#d33',
+              confirmButtonText : 'Yes',
+          }). then ((result) => {
+                  if (result.value) {
+                      document.location.href = href;
+                  }
+          })
+      })
+      
       $('.btn-del').on('click', function(e) {
           e.preventDefault();
           const href = $(this).attr('href')
