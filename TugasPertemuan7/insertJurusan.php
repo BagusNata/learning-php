@@ -63,7 +63,7 @@
     <!-- TABLE -->
     <div class="container"> 
       </br> </br>
-      <h1 class="title">Input Data Jurusan</h1>
+      <h1 class="title">Insert Data Jurusan</h1>
       </br> 
       <div class="form-display">
         <div class="table-responsive-sm insert-form-body" >
@@ -86,8 +86,8 @@
                     <td></td>
                     <td></td>
                     <td class="td-space">
-                      <input style="margin-top:10px;" type="submit" value="Simpan">
-                      <input style="margin-top:10px;" type="submit" value="Kembali">
+                      <button style="margin-top:10px;" type="submit" id="btn-simpan">Simpan</button>
+                      <button style="margin-top:10px;" type="submit">Kembali</button>
                     </td>
                   </tr>
                 </table>
@@ -95,9 +95,8 @@
           </form>
         </div>
       </div>
-
     </div>
-
+  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

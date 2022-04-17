@@ -23,8 +23,4 @@
   $qry = "INSERT INTO mahasiswa VALUES ('$nim','$nama_mhs','$kode_jurusan','$jenis_kelamin','$alamat','$no_hp','$email')";
   $exec = mysqli_query($con, $qry);
 
-  if ($exec) {
-      echo "<script>alert('data berhasil di simpan'); window.location = 'index.php'; </script>";
-  } else {
-      echo "Data gagal di proses";
-  }
+  header('location: index.php?m=1');

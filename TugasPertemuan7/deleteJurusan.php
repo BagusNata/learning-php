@@ -119,7 +119,7 @@
               confirmButtonColor: '#3085d6',
               cancelButtonColor : '#d33',
               confirmButtonText : 'Delete Record',
-          }). then ((result) => {
+          }).then ((result) => {
                   if (result.value) {
                       document.location.href = href;
                   }

@@ -122,8 +122,8 @@
                     <td></td>
                     <td></td>
                     <td class="td-space">
-                      <input style="margin-top:10px;" type="submit" value="Simpan">
-                      <input style="margin-top:10px;" type="submit" value="Kembali">
+                      <button style="margin-top:10px;" type="submit" id="btn-simpan">Simpan</button>
+                      <button style="margin-top:10px;" type="submit">Kembali</button>
                     </td>
                   </tr>
                 </table>

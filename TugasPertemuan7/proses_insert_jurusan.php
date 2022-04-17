@@ -14,8 +14,4 @@
   $qry = "INSERT INTO jurusan VALUES ('$kode_jurusan','$nama_jurusan')";
   $exec = mysqli_query($con, $qry);
 
-  if ($exec) {
-      echo "<script>alert('data berhasil di simpan'); window.location = 'index.php'; </script>";
-  } else {
-      echo "Data gagal di proses";
-  }
+  header('location: selectJurusan.php?m=1');
