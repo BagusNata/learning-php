@@ -122,8 +122,27 @@
                     <td></td>
                     <td></td>
                     <td class="td-space">
-                      <button style="margin-top:10px;" type="submit" id="btn-simpan">Simpan</button>
-                      <button style="margin-top:10px;" type="submit">Kembali</button>
+                      <!-- button update -->
+                      <button 
+                        style="margin-top: 10px;
+                              border-color: black;
+                              border-bottom-width: medium;
+                              border-radius: 10px;"
+                        type="submit" 
+                        class="btn btn-success"
+                        id="btn-simpan">Simpan
+                      </button>
+                      <!-- button cancel -->
+                      <button 
+                        style="margin-top: 10px;
+                              border-color: black;
+                              border-bottom-width: medium;
+                              border-radius: 10px;"
+                        type="button"
+                        onclick="history.go(-1);" 
+                        class="btn btn-danger" 
+                        id="btn-cancel">Cancel
+                      </button>
                     </td>
                   </tr>
                 </table>
