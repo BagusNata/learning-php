@@ -28,8 +28,4 @@
           WHERE nim = '$nim' ";
   $exec = mysqli_query($con, $qry);
 
-  if ($exec) {
-    echo "<script>alert('Data berhasil di update!'); window.location = 'index.php'; </script>";
-  } else {
-   echo "Data gagal di update!";
-  }
+  header('location: selectMhs.php?m=1');
