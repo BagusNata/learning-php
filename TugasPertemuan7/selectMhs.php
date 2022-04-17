@@ -65,7 +65,9 @@
       </br> 
       <h1 class="title">Data Mahasiswa</h1>
       </br>
-      <div class="table-responsive-sm table-striped">
+      <div class="table-responsive-sm"  
+          style="box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+          5px 17px 41px 27px rgb(0 0 0 / 46%);">
         <table class="table" border="3">
           <thead class="thead-dark table_title">
             <tr>
