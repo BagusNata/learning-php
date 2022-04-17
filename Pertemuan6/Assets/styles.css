@@ -1,0 +1,15 @@
+body {
+  margin: 2rem 5rem;
+  background-color: ghostwhite;
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 2.5rem;
+}
+
+.title_dataMhs {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
