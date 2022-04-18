@@ -1,0 +1,81 @@
+body {
+  background: url("web-bg.webp") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* NAVBAR */
+.bg-nav {
+  background-color: black;
+}
+.mynavbar {
+  display: flex !important;
+  justify-content: center;
+}
+
+/* CONTENT */
+.title {
+  text-align: center;
+  color: #fafafa;
+  font-size: 45px;
+  -webkit-text-stroke: 1.5px;
+  font-family: sans-serif;
+  text-shadow: 1px 4px 5px #000000;
+  -webkit-text-stroke-color: black;
+}
+
+/* INDEX TABLE */
+/* head */
+.table_title {
+  text-align: center;
+  font-size: 16px;
+  font-family: ui-serif;
+}
+
+/* body */
+.table td,
+.table th {
+  padding: 0.75rem;
+  vertical-align: middle !important;
+  border-top: 1px solid #dee2e6;
+}
+.table-body {
+  text-align: left;
+  font-size: 14px;
+  font-family: math;
+  background-color: #fafafa;
+}
+
+/* INSERT DATA */
+.form-display {
+  display: flex;
+  margin-bottom: 4rem;
+  justify-content: center;
+}
+.insert-form-body {
+  display: inline-flex;
+  background-color: #fafafa;
+  font-family: math;
+  padding: 2rem 3rem;
+  border-radius: 30px;
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 17px 41px 27px rgb(0 0 0 / 46%);
+}
+.td-space {
+  padding: 0 1rem;
+}
+
+/* SELECT MAHASISWA */
+.table-bodyMhs {
+  text-align: center;
+  font-size: 14px;
+  font-family: math;
+  background-color: #fafafa;
+}
+
+/* SELECT JURUSAN */
+.table-bodyJurusan {
+  text-align: center;
+  font-size: 14px;
+  font-family: math;
+  background-color: #fafafa;
+}
