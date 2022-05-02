@@ -79,6 +79,7 @@
               <th scope="col">Alamat</th>
               <th scope="col">No. Hp</th>
               <th scope="col">Email</th>
+              <th scope="col">NIDN</th>
               <th scope="col">Dosen Wali</th>
               <th scope="col" colspan="2">Action</th>
             </tr>
@@ -109,7 +110,8 @@
               <td style='text-align:center;'> <?php echo $data['alamat']         ?> </td>
               <td style='text-align:center;'> <?php echo $data['no_hp']          ?> </td>
               <td style='text-align:center;'> <?php echo $data['email']          ?> </td>
-              <td style='text-align:center;'> <?php echo $data['nama_dosen']          ?> </td>
+              <td style='text-align:center;'> <?php echo $data['nidn']     ?> </td>
+              <td style='text-align:center;'> <?php echo $data['nama_dosen']     ?> </td>
               <td style="text-align: center;"> 
                 <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
               </td>

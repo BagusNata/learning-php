@@ -78,6 +78,7 @@
               <th scope="col">Alamat</th>
               <th scope="col">No. Hp</th>
               <th scope="col">Email</th>
+              <th scope="col">NIDN</th>
             </tr>
           </thead>
 
@@ -98,6 +99,7 @@
               <td> <?php echo $data['alamat']         ?> </td>
               <td> <?php echo $data['no_hp']          ?> </td>
               <td> <?php echo $data['email']          ?> </td>
+              <td> <?php echo $data['nidn']          ?> </td>
             </tr>
             <?php } ?>
           </tbody>
