@@ -79,6 +79,7 @@
               <th scope="col">Alamat</th>
               <th scope="col">No. Hp</th>
               <th scope="col">Email</th>
+              <th scope="col">Dosen Wali</th>
               <th scope="col" colspan="2">Action</th>
             </tr>
           </thead>
@@ -87,11 +88,12 @@
             include "koneksi.php";
 
             $qry = "SELECT 
-                        mahasiswa.*, jurusan.nama_jurusan
+                        mahasiswa.*, jurusan.nama_jurusan, dosen.nama_dosen
                     FROM
-                        jurusan, mahasiswa
+                        jurusan, mahasiswa , dosen
                     WHERE
-                        mahasiswa.kode_jurusan = jurusan.kode_jurusan
+                        mahasiswa.kode_jurusan = jurusan.kode_jurusan AND
+                        mahasiswa.nidn = dosen.nidn
                     ORDER BY mahasiswa.nim";
             $exec = mysqli_query($con, $qry);
             while($data = mysqli_fetch_array($exec)) {
@@ -102,11 +104,12 @@
               <td style='text-align:center;'> <?php echo $data['nim']            ?> </td>
               <td>                            <?php echo $data['nama_mhs']       ?> </td>
               <td style='text-align:center;'> <?php echo $data['kode_jurusan']   ?> </td>
-              <td>                            <?php echo $data['nama_jurusan']   ?> </td>
+              <td style='text-align:center;'> <?php echo $data['nama_jurusan']   ?> </td>
               <td style='text-align:center;'> <?php echo $data['jenis_kelamin']  ?> </td>
-              <td>                            <?php echo $data['alamat']         ?> </td>
+              <td style='text-align:center;'> <?php echo $data['alamat']         ?> </td>
               <td>                            <?php echo $data['no_hp']          ?> </td>
               <td>                            <?php echo $data['email']          ?> </td>
+              <td>                            <?php echo $data['nama_dosen']          ?> </td>
               <td style="text-align: center;"> 
                 <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
               </td>
