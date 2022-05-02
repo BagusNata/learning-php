@@ -119,6 +119,11 @@
                     <td class="td-space"> <input type="email" name="email"></td>
                   </tr>
                   <tr>
+                    <td class="td-space">NIDN (Nomor Induk Dosen Nasional)</td>
+                    <td class="td-space"> : </td>
+                    <td class="td-space"> <input type="text" name="nidn"></td>
+                  </tr>
+                  <tr>
                     <td></td>
                     <td></td>
                     <td class="td-space">

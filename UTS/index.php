@@ -102,14 +102,14 @@
           <tbody class="table-body">
             <tr>
               <td style='text-align:center;'> <?php echo $data['nim']            ?> </td>
-              <td>                            <?php echo $data['nama_mhs']       ?> </td>
+              <td style='text-align:center;'> <?php echo $data['nama_mhs']       ?> </td>
               <td style='text-align:center;'> <?php echo $data['kode_jurusan']   ?> </td>
               <td style='text-align:center;'> <?php echo $data['nama_jurusan']   ?> </td>
               <td style='text-align:center;'> <?php echo $data['jenis_kelamin']  ?> </td>
               <td style='text-align:center;'> <?php echo $data['alamat']         ?> </td>
-              <td>                            <?php echo $data['no_hp']          ?> </td>
-              <td>                            <?php echo $data['email']          ?> </td>
-              <td>                            <?php echo $data['nama_dosen']          ?> </td>
+              <td style='text-align:center;'> <?php echo $data['no_hp']          ?> </td>
+              <td style='text-align:center;'> <?php echo $data['email']          ?> </td>
+              <td style='text-align:center;'> <?php echo $data['nama_dosen']          ?> </td>
               <td style="text-align: center;"> 
                 <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
               </td>
