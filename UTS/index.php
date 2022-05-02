@@ -63,7 +63,7 @@
     <!-- TABLE -->
     <div class="container"> 
       </br> </br>
-      <h1 class="title">TUGAS PERTEMUAN 7</h1>
+      <h1 class="title">UJIAN TENGAH SEMESTER</h1>
       </br> 
       <div class="table-responsive-sm" 
           style="box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
