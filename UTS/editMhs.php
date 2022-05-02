@@ -132,6 +132,11 @@ $data = mysqli_fetch_array($exec);
                     <td class="td-space"><input type="email" name="email" value="<?php echo $data['email'] ?>"></td>
                   </tr>
                   <tr>
+                    <td class="td-space">NIDN (Nomor Induk Dosen Nasional)</td>
+                    <td class="td-space"> : </td>
+                    <td class="td-space"><input type="text" name="nidn" value="<?php echo $data['nidn'] ?>"></td>
+                  </tr>
+                  <tr>
                     <td></td>
                     <td></td>
                     <td class="td-space">

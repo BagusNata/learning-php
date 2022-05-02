@@ -7,6 +7,7 @@
   $alamat         = $_POST['alamat'];
   $no_hp          = $_POST['phoneNumber'];
   $email          = $_POST['email'];
+  $nidn           = $_POST['nidn'];
 
   echo $nim           . "<br>";
   echo $nama_mhs      . "<br>";
@@ -16,6 +17,7 @@
   echo $alamat        . "<br>";
   echo $no_hp         . "<br>";
   echo $email         . "<br>";
+  echo $nidn         . "<br>";
 
 //Membuat koneksi database
   include "koneksi.php";
@@ -24,7 +26,7 @@
   $qry = "UPDATE mahasiswa
           SET nama_mhs = '$nama_mhs', kode_jurusan = '$kode_jurusan', 
               jenis_kelamin = '$jenis_kelamin', alamat = '$alamat', 
-              no_hp = '$no_hp', email = '$email'
+              no_hp = '$no_hp', email = '$email', nidn = '$nidn'
           WHERE nim = '$nim' ";
   $exec = mysqli_query($con, $qry);
 

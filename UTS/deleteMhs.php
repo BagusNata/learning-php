@@ -78,6 +78,7 @@
               <th scope="col">Alamat</th>
               <th scope="col">No. Hp</th>
               <th scope="col">Email</th>
+              <th scope="col">NIDN</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -93,12 +94,13 @@
           <tbody class="table-body">
             <tr>
               <td style='text-align:center;'> <?php echo $data['nim']            ?> </td>
-              <td>                            <?php echo $data['nama_mhs']       ?> </td>
+              <td style='text-align:center;'> <?php echo $data['nama_mhs']       ?> </td>
               <td style='text-align:center;'> <?php echo $data['kode_jurusan']   ?> </td>
               <td style='text-align:center;'> <?php echo $data['jenis_kelamin']  ?> </td>
-              <td>                            <?php echo $data['alamat']         ?> </td>
-              <td>                            <?php echo $data['no_hp']          ?> </td>
-              <td>                            <?php echo $data['email']          ?> </td>
+              <td style='text-align:center;'> <?php echo $data['alamat']         ?> </td>
+              <td style='text-align:center;'> <?php echo $data['no_hp']          ?> </td>
+              <td style='text-align:center;'> <?php echo $data['email']          ?> </td>
+              <td style='text-align:center;'> <?php echo $data['nidn']           ?> </td>
               <td style="text-align: center;"> 
                 <a style="color:black;" href="proses_delete_mhs.php?nim=<?php echo $data['nim']?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
               </td>
