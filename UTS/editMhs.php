@@ -99,12 +99,18 @@ $data = mysqli_fetch_array($exec);
                     <td class="td-space">Jurusan</td>
                     <td class="td-space"> : </td>
                     <td class="td-space">
-                      <select name="jurusan" id="jurusan">
-                        <option value="001">Sistem informasi</option>
-                        <option value="002">Sistem Komputer</option>
-                        <option value="004">Teknologi Informasi</option>
-                        <option value="005">Bisnis Digital</option>
-                      </select>
+                      <?php
+                        include "koneksi.php";
+
+                          $qry = "SELECT * FROM jurusan";
+                          $exec = mysqli_query($con, $qry);
+                      ?>
+                      <!--Buat option-->
+                        <select name="jurusan" id="jurusan">
+                          <?php while ($row1 = mysqli_fetch_array($exec)):; ?>
+                            <option value="<?php echo $row1[0]; ?>"><?php echo $row1[1]; ?></option>
+                          <?php endwhile; ?>
+                        </select>
                     </td>
                   </tr>
                   <tr>

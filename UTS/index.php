@@ -74,7 +74,7 @@
       <div>
         <!-- SearchBox -->
           <div class="search-box-body">
-            <form class="search-box" action="proses_search_mhs.php">
+            <form class="search-box" action="proses_search_mhs.php" method="POST">
               <input class="input-shape" type="text" placeholder="Search..." name="search">
               <button 
                 class="button-search" 
