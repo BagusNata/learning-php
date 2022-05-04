@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="Assets/styles.css">
+    <link rel="stylesheet" href="Assets/stylesUTS.css">
     <title>Bagus Nata</title>
   </head>
 
@@ -69,9 +69,7 @@
       </br> </br>
       <h1 class="title">Delete Data Mahasiswa</h1>
       </br> 
-      <div class="table-responsive-sm"  
-          style="box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-          5px 17px 41px 27px rgb(0 0 0 / 46%);">
+      <div class="table-responsive-sm shadow">
         <table class="table" border="3">
           <thead class="thead-dark table_title">
             <tr>
@@ -97,15 +95,15 @@
 
           <tbody class="table-body">
             <tr>
-              <td style='text-align:center;'> <?php echo $data['nim']            ?> </td>
-              <td style='text-align:center;'> <?php echo $data['nama_mhs']       ?> </td>
-              <td style='text-align:center;'> <?php echo $data['kode_jurusan']   ?> </td>
-              <td style='text-align:center;'> <?php echo $data['jenis_kelamin']  ?> </td>
-              <td style='text-align:center;'> <?php echo $data['alamat']         ?> </td>
-              <td style='text-align:center;'> <?php echo $data['no_hp']          ?> </td>
-              <td style='text-align:center;'> <?php echo $data['email']          ?> </td>
-              <td style='text-align:center;'> <?php echo $data['nidn']           ?> </td>
-              <td style="text-align: center;"> 
+              <td class="text-center"> <?php echo $data['nim']            ?> </td>
+              <td class="text-center"> <?php echo $data['nama_mhs']       ?> </td>
+              <td class="text-center"> <?php echo $data['kode_jurusan']   ?> </td>
+              <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
+              <td class="text-center"> <?php echo $data['alamat']         ?> </td>
+              <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
+              <td class="text-center"> <?php echo $data['email']          ?> </td>
+              <td class="text-center"> <?php echo $data['nidn']           ?> </td>
+              <td class="text-center"> 
                 <a style="color:black;" href="proses_delete_mhs.php?nim=<?php echo $data['nim']?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
               </td>
             </tr>

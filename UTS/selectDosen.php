@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="Assets/styles.css">
+    <link rel="stylesheet" href="Assets/stylesUTS.css">
     <title>Bagus Nata</title>
   </head>
 
@@ -67,11 +67,9 @@
     <!-- TABLE -->
     <div class="container"> 
       </br> 
-      <h1 class="title">Data Mahasiswa</h1>
+      <h1 class="title">Data Dosen</h1>
       </br>
-      <div class="table-responsive-sm"  
-          style="box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-          5px 17px 41px 27px rgb(0 0 0 / 46%);">
+      <div class="table-responsive-sm shadow">
         <table class="table" border="3">
           <thead class="thead-dark table_title">
             <tr>
@@ -96,14 +94,14 @@
 
           <tbody class="table-bodyMhs">
             <tr>
-              <td> <?php echo $data['nidn']           ?> </td>
-              <td> <?php echo $data['nama_dosen']     ?> </td>
-              <td> <?php echo $data['pendidikan']     ?> </td>
-              <td> <?php echo $data['tgl_lahir']      ?> </td>
-              <td> <?php echo $data['jenis_kelamin']  ?> </td>
-              <td> <?php echo $data['alamat']         ?> </td>
-              <td> <?php echo $data['no_hp']          ?> </td>
-              <td> <?php echo $data['email']          ?> </td>
+              <td class="text-center"> <?php echo $data['nidn']           ?> </td>
+              <td class="text-center"> <?php echo $data['nama_dosen']     ?> </td>
+              <td class="text-center"> <?php echo $data['pendidikan']     ?> </td>
+              <td class="text-center"> <?php echo $data['tgl_lahir']      ?> </td>
+              <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
+              <td class="text-center"> <?php echo $data['alamat']         ?> </td>
+              <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
+              <td class="text-center"> <?php echo $data['email']          ?> </td>
             </tr>
             <?php } ?>
           </tbody>

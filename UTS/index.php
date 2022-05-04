@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="Assets/styles.css">
+    <link rel="stylesheet" href="Assets/stylesUTS.css">
     <title>Bagus Nata</title>
   </head>
 
@@ -14,120 +15,134 @@
       <div class="mynavbar collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <!-- Navbar home -->
-          <li class="nav-item active">
-            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-          </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            </li>
           <!-- Navbar Insert -->
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Insert
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="insertMhs.php">Data Mahasiswa</a>
-              <a class="dropdown-item" href="insertJurusan.php">Data Jurusan</a>
-              <a class="dropdown-item" href="insertDosen.php">Data Dosen</a>
-            </div>
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Insert
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="insertMhs.php">Data Mahasiswa</a>
+                <a class="dropdown-item" href="insertJurusan.php">Data Jurusan</a>
+                <a class="dropdown-item" href="insertDosen.php">Data Dosen</a>
+              </div>
+            </li>
           <!-- Navbar Select -->
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Select
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="selectMhs.php">Data Mahasiswa</a>
-              <a class="dropdown-item" href="selectJurusan.php">Data Jurusan</a>
-              <a class="dropdown-item" href="selectDosen.php">Data Dosen</a>
-            </div>
-          </li>
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Select
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="selectMhs.php">Data Mahasiswa</a>
+                <a class="dropdown-item" href="selectJurusan.php">Data Jurusan</a>
+                <a class="dropdown-item" href="selectDosen.php">Data Dosen</a>
+              </div>
+            </li>
           <!-- Navbar Update -->
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Update
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="updateMhs.php">Data Mahasiswa</a>
-              <a class="dropdown-item" href="updateJurusan.php">Data Jurusan</a>
-              <a class="dropdown-item" href="updateDosen.php">Data dosen</a>
-            </div>
-          </li>
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Update
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="updateMhs.php">Data Mahasiswa</a>
+                <a class="dropdown-item" href="updateJurusan.php">Data Jurusan</a>
+                <a class="dropdown-item" href="updateDosen.php">Data dosen</a>
+              </div>
+            </li>
           <!-- Navbar Delete -->
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Delete
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="deleteMhs.php">Data Mahasiswa</a>
-              <a class="dropdown-item" href="deleteJurusan.php">Data Jurusan</a>
-              <a class="dropdown-item" href="deleteDosen.php">Data dosen</a>
-            </div>
-          </li>
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Delete
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="deleteMhs.php">Data Mahasiswa</a>
+                <a class="dropdown-item" href="deleteJurusan.php">Data Jurusan</a>
+                <a class="dropdown-item" href="deleteDosen.php">Data dosen</a>
+              </div>
+            </li>
         </ul>
       </div>
     </nav>
 
-    <!-- TABLE -->
+    <!-- Content -->
     <div class="container"> 
       </br> </br>
       <h1 class="title">UJIAN TENGAH SEMESTER</h1>
-      </br> 
-      <div class="table-responsive-sm" 
-          style="box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-          5px 17px 41px 27px rgb(0 0 0 / 46%);">
-        <table class="table" border="3">
-          <thead class="thead-dark table_title">
-            <tr>
-              <th scope="col">NIM</th>
-              <th scope="col">Nama Mahasiwa</th>
-              <th scope="col">Kode Jurusan</th>
-              <th scope="col">Nama Jurusan</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Alamat</th>
-              <th scope="col">No. Hp</th>
-              <th scope="col">Email</th>
-              <th scope="col">NIDN</th>
-              <th scope="col">Dosen Wali</th>
-              <th scope="col" colspan="2">Action</th>
-            </tr>
-          </thead>
+      </br> </br> 
+      <div>
+        <!-- SearchBox -->
+          <div class="search-box-body">
+            <form class="search-box" action="proses_search_mhs.php">
+              <input class="input-shape" type="text" placeholder="Search..." name="search">
+              <button 
+                class="button-search" 
+                type="button"><i 
+                class="fa fa-search"
+              >
+                </i>
+              </button>
+            </form>
+          </div>
+        <!-- Table -->
+          <div class="table-responsive-sm shadow">
+            <table class="table" border="3">
+              <thead class="thead-dark table_title">
+                <tr>
+                  <th scope="col">NIM</th>
+                  <th scope="col">Nama Mahasiwa</th>
+                  <th scope="col">Kode Jurusan</th>
+                  <th scope="col">Nama Jurusan</th>
+                  <th scope="col">Gender</th>
+                  <th scope="col">Alamat</th>
+                  <th scope="col">No. Hp</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">NIDN</th>
+                  <th scope="col">Dosen Wali</th>
+                  <th scope="col" colspan="2">Action</th>
+                </tr>
+              </thead>
 
-          <?php
-            include "koneksi.php";
+              <?php
+                include "koneksi.php";
 
-            $qry = "SELECT 
-                        mahasiswa.*, jurusan.nama_jurusan, dosen.nama_dosen
-                    FROM
-                        jurusan, mahasiswa , dosen
-                    WHERE
-                        mahasiswa.kode_jurusan = jurusan.kode_jurusan AND
-                        mahasiswa.nidn = dosen.nidn
-                    ORDER BY mahasiswa.nim";
-            $exec = mysqli_query($con, $qry);
-            while($data = mysqli_fetch_array($exec)) {
-          ?>
+                $qry = "SELECT 
+                            mahasiswa.*, jurusan.nama_jurusan, dosen.nama_dosen
+                        FROM
+                            jurusan, mahasiswa , dosen
+                        WHERE
+                            mahasiswa.kode_jurusan = jurusan.kode_jurusan AND
+                            mahasiswa.nidn = dosen.nidn
+                        ORDER BY mahasiswa.nim";
+                $exec = mysqli_query($con, $qry);
+                while($data = mysqli_fetch_array($exec)) {
+              ?>
 
-          <tbody class="table-body">
-            <tr>
-              <td style='text-align:center;'> <?php echo $data['nim']            ?> </td>
-              <td style='text-align:center;'> <?php echo $data['nama_mhs']       ?> </td>
-              <td style='text-align:center;'> <?php echo $data['kode_jurusan']   ?> </td>
-              <td style='text-align:center;'> <?php echo $data['nama_jurusan']   ?> </td>
-              <td style='text-align:center;'> <?php echo $data['jenis_kelamin']  ?> </td>
-              <td style='text-align:center;'> <?php echo $data['alamat']         ?> </td>
-              <td style='text-align:center;'> <?php echo $data['no_hp']          ?> </td>
-              <td style='text-align:center;'> <?php echo $data['email']          ?> </td>
-              <td style='text-align:center;'> <?php echo $data['nidn']     ?> </td>
-              <td style='text-align:center;'> <?php echo $data['nama_dosen']     ?> </td>
-              <td style="text-align: center;"> 
-                <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
-              </td>
-              <td style="text-align: center;"> 
-                <a style="color:black;" href="proses_delete_mhs.php?nim=<?php echo $data['nim']?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
-              </td>
-            </tr>
-            <?php } ?>
-          </tbody>
-        </table>
+              <tbody class="table-body">
+                <tr>
+                  <td class="text-center"> <?php echo $data['nim']            ?> </td>
+                  <td class="text-center"> <?php echo $data['nama_mhs']       ?> </td>
+                  <td class="text-center"> <?php echo $data['kode_jurusan']   ?> </td>
+                  <td class="text-center"> <?php echo $data['nama_jurusan']   ?> </td>
+                  <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
+                  <td class="text-center"> <?php echo $data['alamat']         ?> </td>
+                  <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
+                  <td class="text-center"> <?php echo $data['email']          ?> </td>
+                  <td class="text-center"> <?php echo $data['nidn']     ?> </td>
+                  <td class="text-center"> <?php echo $data['nama_dosen']     ?> </td>
+                  <td class="text-center"> 
+                    <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
+                  </td>
+                  <td class="text-center"> 
+                    <a style="color:black;" href="proses_delete_mhs.php?nim=<?php echo $data['nim']?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
+                  </td>
+                </tr>
+                <?php } ?>
+              </tbody>
+            </table>
+          </div>
       </div>
-
     </div>
 
     <!-- Untuk merefresh -->

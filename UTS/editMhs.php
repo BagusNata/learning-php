@@ -13,7 +13,7 @@ $data = mysqli_fetch_array($exec);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="Assets/styles.css">
+    <link rel="stylesheet" href="Assets/stylesUTS.css">
     <title>Bagus Nata</title>
   </head>
 
@@ -79,7 +79,7 @@ $data = mysqli_fetch_array($exec);
       <h1 class="title">Update Data Mahasiswa</h1>
       </br> 
       <div class="form-display">
-        <div class="table-responsive-sm insert-form-body" >
+        <div class="table-responsive-sm insert-form-body shadow" >
           <form action="proses_update_mhs.php" method="POST">
             <fieldset>
               <legend class="text-center">Form Update Biodata Mahasiswa</legend> </br>
@@ -146,23 +146,15 @@ $data = mysqli_fetch_array($exec);
                     <td class="td-space">
                       <!-- button update -->
                       <button 
-                        style="margin-top: 10px;
-                              border-color: black;
-                              border-bottom-width: medium;
-                              border-radius: 10px;"
                         type="submit" 
-                        class="btn btn-success"
+                        class="btn btn-success btn-form"
                         id="btn-update">Update
                       </button>
                       <!-- button cancel -->
                       <button 
-                        style="margin-top: 10px;
-                              border-color: black;
-                              border-bottom-width: medium;
-                              border-radius: 10px;"
                         type="button"
                         onclick="history.go(-1);" 
-                        class="btn btn-danger" 
+                        class="btn btn-danger btn-form" 
                         id="btn-cancel">Cancel
                       </button>
                     </td>

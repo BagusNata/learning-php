@@ -8,7 +8,6 @@ body {
   background-color: black;
 }
 .mynavbar {
-  display: flex !important;
   justify-content: center;
 }
 
@@ -23,7 +22,48 @@ body {
   -webkit-text-stroke-color: black;
 }
 
+/* SEARCH BOX */
+.input-shape {
+  height: 2.5rem;
+  padding: 0 10px;
+  border-radius: 10px 0 0 10px;
+  background: #fafafa;
+  color: black;
+  font-size: 15px;
+  border: 1px solid black;
+}
+.search-box-body {
+  color: white;
+  display: flex;
+  justify-content: end !important;
+}
+.search-box {
+  display: flex;
+}
+.button-search {
+  height: 2.5rem;
+  width: 2.5rem;
+  background: lightgray;
+  font-size: 17px;
+  border: 1px solid black;
+  border-radius: 0 10px 10px 0;
+  border-left: none;
+  cursor: pointer;
+}
+.button-search:hover {
+  background: #62acb5;
+}
+form.search-box::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 /* INDEX TABLE */
+.shadow {
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+    5px 17px 41px 27px rgb(0 0 0 / 46%);
+}
 /* head */
 .table_title {
   text-align: center;
@@ -57,8 +97,6 @@ body {
   font-family: math;
   padding: 2rem 3rem;
   border-radius: 30px;
-  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-    5px 17px 41px 27px rgb(0 0 0 / 46%);
 }
 .td-space {
   padding: 0 1rem;
@@ -78,4 +116,12 @@ body {
   font-size: 14px;
   font-family: math;
   background-color: #fafafa;
+}
+
+/* UPDATE */
+.btn-form {
+  margin-top: 10px;
+  border-color: black;
+  border-bottom-width: medium;
+  border-radius: 10px;
 }
