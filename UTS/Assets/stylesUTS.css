@@ -1,7 +1,14 @@
 body {
-  background: url("web-bg.webp") no-repeat center center fixed;
+  background: url("./Image/web-bg.jpg") no-repeat center center fixed;
   background-size: cover;
 }
+
+@media (min-width: 1200px){
+.container {
+    max-width: 1190px !important;
+}
+}
+
 
 /* NAVBAR */
 .bg-nav {
@@ -9,13 +16,14 @@ body {
 }
 .mynavbar {
   justify-content: center;
+  font-size: large;
 }
 
 /* CONTENT */
 .title {
   text-align: center;
   color: #fafafa;
-  font-size: 45px;
+  font-size: xxx-large;
   -webkit-text-stroke: 1.5px;
   font-family: sans-serif;
   text-shadow: 1px 4px 5px #000000;
@@ -29,7 +37,7 @@ body {
   border-radius: 10px 0 0 10px;
   background: #fafafa;
   color: black;
-  font-size: 15px;
+  font-size: medium;
   border: 1px solid black;
 }
 .search-box-body {
@@ -41,7 +49,7 @@ body {
   height: 2.5rem;
   width: 2.5rem;
   background: lightgray;
-  font-size: 17px;
+  font-size: medium;
   border: 1px solid black;
   border-radius: 0 10px 10px 0;
   border-left: none;
@@ -64,7 +72,7 @@ form.search-box::after {
 /* head */
 .table_title {
   text-align: center;
-  font-size: 16px;
+  font-size: medium;
   font-family: ui-serif;
 }
 
@@ -77,7 +85,7 @@ form.search-box::after {
 }
 .table-body {
   text-align: left;
-  font-size: 14px;
+  font-size: medium;
   font-family: math;
   background-color: #fafafa;
 }
@@ -102,7 +110,7 @@ form.search-box::after {
 /* SELECT MAHASISWA */
 .table-bodyMhs {
   text-align: center;
-  font-size: 14px;
+  font-size: medium;
   font-family: math;
   background-color: #fafafa;
 }
@@ -110,7 +118,7 @@ form.search-box::after {
 /* SELECT JURUSAN */
 .table-bodyJurusan {
   text-align: center;
-  font-size: 14px;
+  font-size: medium;
   font-family: math;
   background-color: #fafafa;
 }
