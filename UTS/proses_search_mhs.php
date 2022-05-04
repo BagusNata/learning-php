@@ -20,6 +20,10 @@
   echo $nidn         . "<br>";
 
 //membuat query search data
-  $qry = "SELECT * mahasiswa
-          WHERE nim = '$nim' OR nama_mhs = '$nama_mhs' ";
+  $qry = "SELECT mahasiswa.*, jurusan.nama_jurusan, dosen.nama_dosen
+          FROM jurusan, mahasiswa , dosen
+          WHERE
+              mahasiswa.kode_jurusan = jurusan.kode_jurusan AND
+              mahasiswa.nidn = dosen.nidn
+          ORDER BY mahasiswa.nim";
   $exec = mysqli_query($con, $qry);

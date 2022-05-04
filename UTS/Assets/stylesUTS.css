@@ -37,9 +37,6 @@ body {
   display: flex;
   justify-content: end !important;
 }
-.search-box {
-  display: flex;
-}
 .button-search {
   height: 2.5rem;
   width: 2.5rem;
