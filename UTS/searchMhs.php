@@ -18,7 +18,7 @@
     <!-- Content -->
     <div class="container"> 
       </br> </br>
-      <h1 class="title">UJIAN TENGAH SEMESTER</h1>
+      <h1 class="title">Data Mahasiswa</h1>
       </br> </br>
         <!-- Table -->
         <div class="table-responsive-sm shadow">
@@ -33,7 +33,6 @@
                 <th scope="col">No. Hp</th>
                 <th scope="col">Email</th>
                 <th scope="col">NIDN</th>
-                <th scope="col" colspan="2">Action</th>
               </tr>
             </thead>
 
@@ -44,10 +43,10 @@
                 $qry = "SELECT DISTINCT mahasiswa.*
                     FROM mahasiswa 
                     WHERE
-                      mahasiswa.nim LIKE '%$search%' OR mahasiswa.nama_mhs LIKE '%$search%' OR
-                      mahasiswa.kode_jurusan LIKE '%$search%' OR mahasiswa.jenis_kelamin LIKE '%$search%' OR
-                      mahasiswa.alamat LIKE '%$search%' OR mahasiswa.no_hp LIKE '%$search%' OR
-                      mahasiswa.email LIKE '%$search%' OR mahasiswa.nidn LIKE '%$search%'
+                      mahasiswa.nim           LIKE '%$search%' OR mahasiswa.nama_mhs      LIKE '%$search%' OR
+                      mahasiswa.kode_jurusan  LIKE '%$search%' OR mahasiswa.jenis_kelamin LIKE '%$search%' OR
+                      mahasiswa.alamat        LIKE '%$search%' OR mahasiswa.no_hp         LIKE '%$search%' OR
+                      mahasiswa.email         LIKE '%$search%' OR mahasiswa.nidn          LIKE '%$search%'
                     ORDER BY mahasiswa.nim";
 
                 $exec = mysqli_query($con, $qry);
@@ -67,12 +66,6 @@
                   <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
                   <td class="text-center"> <?php echo $data['email']          ?> </td>
                   <td class="text-center"> <?php echo $data['nidn']           ?> </td>
-                  <td class="text-center"> 
-                    <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
-                  </td>
-                  <td class="text-center"> 
-                    <a style="color:black;" href="proses_delete_mhs.php?nim=<?php echo $data['nim']?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
-                  </td>
                 </tr>
             <?php 
                 } 

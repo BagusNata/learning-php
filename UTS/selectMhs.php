@@ -20,14 +20,14 @@
         </br> 
         <h1 class="title">Data Mahasiswa</h1>
         </br>
-      <!-- SearchBox -->
+       <!-- SearchBox -->
         <form class="search-box-body" action="searchMhs.php" method="POST">
           <input class="input-shape" type="text" placeholder="Search..." name="search">
           <button class="button-search" type="submit" name="submit-search"> 
             <i class="fa fa-search"></i>
           </button>
         </form>
-      <!-- Table -->
+        <!-- Table -->
         <div class="table-responsive-sm shadow">
           <table class="table" border="3">
             <thead class="thead-dark table_title">
@@ -66,9 +66,7 @@
             </tbody>
           </table>
         </div>
-      </div>
-     
-         
+      </div>  
     
 
     <!-- Untuk merefresh -->

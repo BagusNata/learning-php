@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="Assets/stylesUTS.css">
     <title>Bagus Nata</title>
@@ -14,11 +15,19 @@
       include "navbar.php";
     ?>
 
-    <!-- TABLE -->
-    <div class="container"> 
-      </br> 
-      <h1 class="title">Data Dosen</h1>
-      </br>
+      <!-- Content --> 
+        <div class="container"> 
+        </br> 
+        <h1 class="title">Data Dosen</h1>
+        </br>
+      <!-- SearchBox -->
+        <form class="search-box-body" action="searchDosen.php" method="POST">
+          <input class="input-shape" type="text" placeholder="Search..." name="search">
+          <button class="button-search" type="submit" name="submit-search"> 
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+      <!-- Table -->
       <div class="table-responsive-sm shadow">
         <table class="table" border="3">
           <thead class="thead-dark table_title">
@@ -57,7 +66,6 @@
           </tbody>
         </table>
       </div>
-
     </div>
 
     <!-- Untuk merefresh -->

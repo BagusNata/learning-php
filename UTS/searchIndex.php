@@ -43,14 +43,18 @@
               include "koneksi.php";  
               if(isset($_POST['submit-search'])) {
                 $search = mysqli_real_escape_string($con, $_POST['search']);
-                $qry = "SELECT DISTINCT mahasiswa.*
-                    FROM mahasiswa 
+                $qry = "SELECT m.*, j.nama_jurusan, d.nama_dosen
+                    FROM mahasiswa AS m
+                    INNER JOIN jurusan AS j
+                    ON m.kode_jurusan = j.kode_jurusan
+                    INNER JOIN dosen AS d
+                    ON m.nidn = d.nidn
                     WHERE
-                      mahasiswa.nim LIKE '%$search%' OR mahasiswa.nama_mhs LIKE '%$search%' OR
-                      mahasiswa.kode_jurusan LIKE '%$search%' OR mahasiswa.jenis_kelamin LIKE '%$search%' OR
-                      mahasiswa.alamat LIKE '%$search%' OR mahasiswa.no_hp LIKE '%$search%' OR
-                      mahasiswa.email LIKE '%$search%' OR mahasiswa.nidn LIKE '%$search%'
-                    ORDER BY mahasiswa.nim";
+                      m.nim           LIKE '%$search%' OR m.nama_mhs      LIKE '%$search%' OR
+                      m.kode_jurusan  LIKE '%$search%' OR m.jenis_kelamin LIKE '%$search%' OR
+                      m.alamat        LIKE '%$search%' OR m.no_hp         LIKE '%$search%' OR
+                      m.email         LIKE '%$search%' OR m.nidn          LIKE '%$search%' OR
+                      j.nama_jurusan  LIKE '%$search%' OR d.nama_dosen    LIKE '%$search%'"; 
 
                 $exec = mysqli_query($con, $qry);
                 $qryResult = mysqli_num_rows($exec);
