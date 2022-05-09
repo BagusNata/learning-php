@@ -77,9 +77,21 @@
                     <td class="td-space"> <input type="email" name="email"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">NIDN (Nomor Induk Dosen Nasional)</td>
+                    <td class="td-space">Dosen Wali</td>
                     <td class="td-space"> : </td>
-                    <td class="td-space"> <input type="text" name="nidn"></td>
+                    <td class="td-space"> 
+                      <?php
+                        include "koneksi.php";
+                        $qry = "SELECT * FROM dosen";
+                        $exec = mysqli_query($con, $qry);
+                      ?>
+                      <!--Buat option-->
+                        <select name="dosen" id="dosen">
+                          <?php while ($row1 = mysqli_fetch_array($exec)):; ?>
+                            <option value="<?php echo $row1[0]; ?>"><?php echo $row1[1]; ?></option>
+                          <?php endwhile; ?>
+                        </select>
+                    </td>
                   </tr>
                   <tr>
                     <td></td>

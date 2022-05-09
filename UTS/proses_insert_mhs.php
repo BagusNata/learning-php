@@ -7,7 +7,7 @@
   $alamat         = $_POST['alamat'];
   $no_hp          = $_POST['phoneNumber'];
   $email          = $_POST['email'];
-  $nidn          = $_POST['nidn'];
+  $nidn          = $_POST['dosen'];
 
   echo $nim           . "<br>";
   echo $nama_mhs      . "<br>";
