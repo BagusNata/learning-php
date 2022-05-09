@@ -1,3 +1,31 @@
+<?php
+   function selectData() {
+    include "koneksi.php";
+    $qry = "SELECT * FROM dosen";
+    $exec = mysqli_query($con, $qry);
+    while($data = mysqli_fetch_array($exec)) {
+  ?>
+
+  <tbody class="table-bodyMhs">
+    <tr>
+      <td class="text-center"> <?php echo $data['nidn']           ?> </td>
+      <td class="text-center"> <?php echo $data['nama_dosen']     ?> </td>
+      <td class="text-center"> <?php echo $data['pendidikan']     ?> </td>
+      <td class="text-center"> <?php echo $data['tgl_lahir']      ?> </td>
+      <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
+      <td class="text-center"> <?php echo $data['alamat']         ?> </td>
+      <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
+      <td class="text-center"> <?php echo $data['email']          ?> </td>
+      <td class="text-center"> 
+        <a style="color:black;" href="editDosen.php?nidn=<?php echo $data['nidn']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
+      </td>
+    </tr>
+    <?php } ?>
+  </tbody>
+  <?php
+   }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -34,31 +62,10 @@
               <th scope="col">Action</th>
             </tr>
           </thead>
-
+        <!-- show Data Table -->
           <?php
-            include "koneksi.php";
-
-            $qry = "SELECT * FROM dosen";
-            $exec = mysqli_query($con, $qry);
-            while($data = mysqli_fetch_array($exec)) {
-          ?>
-
-          <tbody class="table-bodyMhs">
-            <tr>
-              <td class="text-center"> <?php echo $data['nidn']           ?> </td>
-              <td class="text-center"> <?php echo $data['nama_dosen']     ?> </td>
-              <td class="text-center"> <?php echo $data['pendidikan']     ?> </td>
-              <td class="text-center"> <?php echo $data['tgl_lahir']      ?> </td>
-              <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
-              <td class="text-center"> <?php echo $data['alamat']         ?> </td>
-              <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
-              <td class="text-center"> <?php echo $data['email']          ?> </td>
-              <td class="text-center"> 
-                <a style="color:black;" href="editDosen.php?nidn=<?php echo $data['nidn']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
-              </td>
-            </tr>
-            <?php } ?>
-          </tbody>
+           selectData();
+          ?> 
         </table>
       </div>
 

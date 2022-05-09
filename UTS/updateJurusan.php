@@ -1,3 +1,25 @@
+<?php
+   function selectData() {
+    include "koneksi.php";
+    $qry = "SELECT * FROM jurusan";
+    $exec = mysqli_query($con, $qry);
+    while($data = mysqli_fetch_array($exec)) {
+  ?>
+
+  <tbody class="table-body">
+    <tr>
+      <td class="text-center"> <?php echo $data['kode_jurusan']   ?> </td>
+      <td class="text-center"> <?php echo $data['nama_jurusan']  ?> </td>
+      <td class="text-center"> 
+        <a style="color:black;" href="editJurusan.php?kode_jurusan=<?php echo $data['kode_jurusan']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
+      </td>
+    </tr>
+    <?php } ?>
+  </tbody>
+  <?php
+   }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -28,25 +50,10 @@
               <th scope="col">Action</th>
             </tr>
           </thead>
-
+        <!-- show Data Table -->
           <?php
-            include "koneksi.php";
-
-            $qry = "SELECT * FROM jurusan";
-            $exec = mysqli_query($con, $qry);
-            while($data = mysqli_fetch_array($exec)) {
-          ?>
-
-          <tbody class="table-body">
-            <tr>
-              <td class="text-center"> <?php echo $data['kode_jurusan']   ?> </td>
-              <td class="text-center"> <?php echo $data['nama_jurusan']  ?> </td>
-              <td class="text-center"> 
-                <a style="color:black;" href="editJurusan.php?kode_jurusan=<?php echo $data['kode_jurusan']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
-              </td>
-            </tr>
-            <?php } ?>
-          </tbody>
+           selectData();
+          ?> 
         </table>
       </div>
 

@@ -15,3 +15,4 @@
   $exec = mysqli_query($con, $qry);
 
   header('location: selectJurusan.php?m=1');
+?>

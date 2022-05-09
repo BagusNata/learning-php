@@ -31,3 +31,4 @@
   $exec = mysqli_query($con, $qry);
 
   header('location: selectMhs.php?m=1');
+?>

@@ -1,10 +1,10 @@
 <?php
-$nim = $_GET['nim'];
-include "koneksi.php";
+  $nim = $_GET['nim'];
+  include "koneksi.php";
 
-$qry = "SELECT * FROM mahasiswa WHERE nim = '$nim'";
-$exec = mysqli_query($con, $qry);
-$data = mysqli_fetch_array($exec);
+  $qry = "SELECT * FROM mahasiswa WHERE nim = '$nim'";
+  $exec = mysqli_query($con, $qry);
+  $data = mysqli_fetch_array($exec);
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,6 @@ $data = mysqli_fetch_array($exec);
     <?php
       include "navbar.php";
     ?>
-    
     <!-- TABLE -->
     <div class="container"> 
       </br> </br>

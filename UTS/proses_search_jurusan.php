@@ -11,3 +11,4 @@
   $exec = mysqli_query($con,$qry);
 
   header('location: deleteJurusan.php?m=1');
+?>

@@ -30,3 +30,4 @@
   $exec = mysqli_query($con, $qry);
 
   header('location: selectDosen.php?m=1');
+?>

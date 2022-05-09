@@ -1,3 +1,38 @@
+<?php
+   function search() {
+     ?>
+     <form class="search-box-body" action="searchDosen.php" method="POST">
+        <input class="input-shape" type="text" placeholder="Search..." name="search">
+        <button class="button-search" type="submit" name="submit-search"> 
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+     <?php
+   }
+
+   function selectData() {
+    include "koneksi.php";
+    $qry = "SELECT * FROM dosen";
+    $exec = mysqli_query($con, $qry);
+    while($data = mysqli_fetch_array($exec)) {
+  ?>
+  <tbody class="table-bodyMhs">
+    <tr>
+      <td class="text-center"> <?php echo $data['nidn']           ?> </td>
+      <td class="text-center"> <?php echo $data['nama_dosen']     ?> </td>
+      <td class="text-center"> <?php echo $data['pendidikan']     ?> </td>
+      <td class="text-center"> <?php echo $data['tgl_lahir']      ?> </td>
+      <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
+      <td class="text-center"> <?php echo $data['alamat']         ?> </td>
+      <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
+      <td class="text-center"> <?php echo $data['email']          ?> </td>
+    </tr>
+    <?php } ?>
+  </tbody>
+  <?php
+   }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,58 +50,37 @@
       include "navbar.php";
     ?>
 
-      <!-- Content --> 
-        <div class="container"> 
-        </br> 
-        <h1 class="title">Data Dosen</h1>
-        </br>
-      <!-- SearchBox -->
-        <form class="search-box-body" action="searchDosen.php" method="POST">
-          <input class="input-shape" type="text" placeholder="Search..." name="search">
-          <button class="button-search" type="submit" name="submit-search"> 
-            <i class="fa fa-search"></i>
-          </button>
-        </form>
-      <!-- Table -->
-      <div class="table-responsive-sm shadow">
-        <table class="table" border="3">
-          <thead class="thead-dark table_title">
-            <tr>
-              <th scope="col">NIDN</th>
-              <th scope="col">Nama Dosen</th>
-              <th scope="col">Pendidikan</th>
-              <th scope="col">Tanggal Lahir</th>
-              <th scope="col">Jenis Kelamin</th>
-              <th scope="col">Alamat</th>
-              <th scope="col">No. Hp</th>
-              <th scope="col">Email</th>
-            </tr>
-          </thead>
-
+    <!-- Content --> 
+      <div class="container"> 
+      </br> 
+      <h1 class="title">Data Dosen</h1>
+      </br>
+    <!-- SearchBox -->
+      <?php
+        search();
+      ?>      
+    <!-- Table -->
+    <div class="table-responsive-sm shadow">
+      <table class="table" border="3">
+        <thead class="thead-dark table_title">
+          <tr>
+            <th scope="col">NIDN</th>
+            <th scope="col">Nama Dosen</th>
+            <th scope="col">Pendidikan</th>
+            <th scope="col">Tanggal Lahir</th>
+            <th scope="col">Jenis Kelamin</th>
+            <th scope="col">Alamat</th>
+            <th scope="col">No. Hp</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <!-- show Data Table -->
           <?php
-            include "koneksi.php";
-
-            $qry = "SELECT * FROM dosen";
-            $exec = mysqli_query($con, $qry);
-            while($data = mysqli_fetch_array($exec)) {
-          ?>
-
-          <tbody class="table-bodyMhs">
-            <tr>
-              <td class="text-center"> <?php echo $data['nidn']           ?> </td>
-              <td class="text-center"> <?php echo $data['nama_dosen']     ?> </td>
-              <td class="text-center"> <?php echo $data['pendidikan']     ?> </td>
-              <td class="text-center"> <?php echo $data['tgl_lahir']      ?> </td>
-              <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
-              <td class="text-center"> <?php echo $data['alamat']         ?> </td>
-              <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
-              <td class="text-center"> <?php echo $data['email']          ?> </td>
-            </tr>
-            <?php } ?>
-          </tbody>
-        </table>
-      </div>
+           selectData();
+          ?> 
+      </table>
     </div>
+  </div>
 
     <!-- Untuk merefresh -->
     <?php if (isset ($_GET['m'])) : ?>

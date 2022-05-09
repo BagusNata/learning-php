@@ -26,3 +26,4 @@
   $exec = mysqli_query($con, $qry);
 
   header('location: index.php?m=1');
+?>
