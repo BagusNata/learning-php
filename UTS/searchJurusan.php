@@ -1,3 +1,39 @@
+<?php
+   function selectData() {
+    include "koneksi.php";  
+    if(isset($_POST['submit-search'])) {
+      $search = mysqli_real_escape_string($con, $_POST['search']);
+      $qry = "SELECT DISTINCT jurusan.*
+          FROM jurusan 
+          WHERE
+            jurusan.kode_jurusan LIKE '%$search%' OR 
+            jurusan.nama_jurusan LIKE '%$search%'
+          ORDER BY jurusan.kode_jurusan";
+
+      $exec = mysqli_query($con, $qry);
+      $qryResult = mysqli_num_rows($exec);
+
+      if ($qryResult > 0){
+        while ($data = mysqli_fetch_assoc($exec)) {
+  ?>
+    
+    <tbody class="table-body">
+      <tr>
+        <td class="text-center"> <?php echo $data['kode_jurusan']   ?> </td>
+        <td class="text-center"> <?php echo $data['nama_jurusan']   ?> </td>
+      </tr>
+  <?php 
+        } 
+      } else {
+        echo "<p style='color:white; font-size:larger;'> Data tidak ditemukan! </p>";
+      }
+    } 
+  ?>
+  </tbody>
+<?php
+   }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,7 +50,6 @@
     <?php
       include "navbar.php";
     ?>
-
     <!-- Content -->
     <div class="container"> 
       </br> </br>
@@ -29,38 +64,10 @@
                 <th scope="col">Nama Jurusan</th>
               </tr>
             </thead>
-
+          <!-- Show Data Table -->
             <?php
-              include "koneksi.php";  
-              if(isset($_POST['submit-search'])) {
-                $search = mysqli_real_escape_string($con, $_POST['search']);
-                $qry = "SELECT DISTINCT jurusan.*
-                    FROM jurusan 
-                    WHERE
-                      jurusan.kode_jurusan LIKE '%$search%' OR 
-                      jurusan.nama_jurusan LIKE '%$search%'
-                    ORDER BY jurusan.kode_jurusan";
-
-                $exec = mysqli_query($con, $qry);
-                $qryResult = mysqli_num_rows($exec);
-
-                if ($qryResult > 0){
-                  while ($data = mysqli_fetch_assoc($exec)) {
-            ?>
-              
-              <tbody class="table-body">
-                <tr>
-                  <td class="text-center"> <?php echo $data['kode_jurusan']   ?> </td>
-                  <td class="text-center"> <?php echo $data['nama_jurusan']   ?> </td>
-                </tr>
-            <?php 
-                } 
-              } else {
-                echo "<p style='color:white; font-size:larger;'> Data tidak ditemukan! </p>";
-              }
-            } 
-            ?>
-            </tbody>
+              selectData();
+            ?> 
           </table>
         </div>
     </div>

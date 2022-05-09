@@ -1,3 +1,32 @@
+<?php
+   function search() {
+     ?>
+     <form class="search-box-body" action="searchJurusan.php" method="POST">
+        <input class="input-shape" type="text" placeholder="Search..." name="search">
+        <button class="button-search" type="submit" name="submit-search"> 
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+     <?php
+   }
+
+   function selectData() {
+    include "koneksi.php";
+    $qry = "SELECT * FROM jurusan";
+    $exec = mysqli_query($con, $qry);
+    while($data = mysqli_fetch_array($exec)) {
+  ?>
+  <tbody class="table-bodyJurusan">
+    <tr>
+      <td class="text-center"> <?php echo $data['kode_jurusan']   ?> </td>
+      <td class="text-center"> <?php echo $data['nama_jurusan']   ?> </td>
+    </tr>
+    <?php } ?>
+  </tbody>
+  <?php
+   }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,46 +44,31 @@
       include "navbar.php";
     ?>
 
-      <!-- Content --> 
-        <div class="container"> 
-        </br> 
-        <h1 class="title">Data Jurusan</h1>
-        </br>
-      <!-- SearchBox -->
-        <form class="search-box-body" action="searchJurusan.php" method="POST">
-          <input class="input-shape" type="text" placeholder="Search..." name="search">
-          <button class="button-search" type="submit" name="submit-search"> 
-            <i class="fa fa-search"></i>
-          </button>
-        </form>
-      <!-- Table -->
-      <div class="table-responsive-sm shadow">
-        <table class="table" border="3">
-          <thead class="thead-dark table_title">
-            <tr>
-              <th scope="col">Kode Jurusan</th>
-              <th scope="col">Nama Jurusan</th>
-            </tr>
-          </thead>
-
+    <!-- Content --> 
+      <div class="container"> 
+      </br> 
+      <h1 class="title">Data Jurusan</h1>
+      </br>
+    <!-- SearchBox -->
+      <?php
+        search();
+      ?>      
+    <!-- Table -->
+    <div class="table-responsive-sm shadow">
+      <table class="table" border="3">
+        <thead class="thead-dark table_title">
+          <tr>
+            <th scope="col">Kode Jurusan</th>
+            <th scope="col">Nama Jurusan</th>
+          </tr>
+        </thead>
+        <!-- show Data Table -->
           <?php
-            include "koneksi.php";
-
-            $qry = "SELECT * FROM jurusan";
-            $exec = mysqli_query($con, $qry);
-            while($data = mysqli_fetch_array($exec)) {
+           selectData();
           ?>
-
-          <tbody class="table-bodyJurusan">
-            <tr>
-              <td class="text-center"> <?php echo $data['kode_jurusan']   ?> </td>
-              <td class="text-center"> <?php echo $data['nama_jurusan']   ?> </td>
-            </tr>
-            <?php } ?>
-          </tbody>
-        </table>
-      </div>
+      </table>
     </div>
+  </div>
 
     <!-- Untuk merefresh -->
     <?php if (isset ($_GET['m'])) : ?>

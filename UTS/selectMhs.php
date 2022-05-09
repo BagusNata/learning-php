@@ -1,7 +1,7 @@
 <?php
    function search() {
      ?>
-     <form class="search-box-body" action="searchIndex.php" method="POST">
+     <form class="search-box-body" action="searchMhs.php" method="POST">
         <input class="input-shape" type="text" placeholder="Search..." name="search">
         <button class="button-search" type="submit" name="submit-search"> 
           <i class="fa fa-search"></i>
