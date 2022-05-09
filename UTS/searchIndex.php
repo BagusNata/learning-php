@@ -1,3 +1,56 @@
+<?php
+   function selectData() {
+    include "koneksi.php";  
+    if(isset($_POST['submit-search'])) {
+      $search = mysqli_real_escape_string($con, $_POST['search']);
+      $qry = "SELECT m.*, j.nama_jurusan, d.nama_dosen
+          FROM mahasiswa AS m
+          INNER JOIN jurusan AS j
+          ON m.kode_jurusan = j.kode_jurusan
+          INNER JOIN dosen AS d
+          ON m.nidn = d.nidn
+          WHERE
+            m.nim           LIKE '%$search%' OR m.nama_mhs      LIKE '%$search%' OR
+            m.kode_jurusan  LIKE '%$search%' OR m.jenis_kelamin LIKE '%$search%' OR
+            m.alamat        LIKE '%$search%' OR m.no_hp         LIKE '%$search%' OR
+            m.email         LIKE '%$search%' OR m.nidn          LIKE '%$search%' OR
+            j.nama_jurusan  LIKE '%$search%' OR d.nama_dosen    LIKE '%$search%'"; 
+
+      $exec = mysqli_query($con, $qry);
+      $qryResult = mysqli_num_rows($exec);
+
+      if ($qryResult > 0){
+        while ($data = mysqli_fetch_assoc($exec)) {
+  ?>
+    <tbody class="table-body">
+      <tr>
+        <td class="text-center"> <?php echo $data['nim']            ?> </td>
+        <td class="text-center"> <?php echo $data['nama_mhs']       ?> </td>
+        <td class="text-center"> <?php echo $data['nama_jurusan']   ?> </td>
+        <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
+        <td class="text-center"> <?php echo $data['alamat']         ?> </td>
+        <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
+        <td class="text-center"> <?php echo $data['email']          ?> </td>
+        <td class="text-center"> <?php echo $data['nama_dosen']     ?> </td>
+        <td class="text-center"> 
+          <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
+        </td>
+        <td class="text-center"> 
+          <a style="color:black;" href="proses_delete_mhs.php?nim=<?php echo $data['nim']?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
+        </td>
+      </tr>
+  <?php 
+        } 
+      } else {
+        echo "<p style='color:white; font-size:larger;'> Data tidak ditemukan! </p>";
+      }
+    } 
+  ?>
+  </tbody>
+  <?php
+   }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -36,56 +89,10 @@
                 <th scope="col" colspan="2">Action</th>
               </tr>
             </thead>
-
+          <!-- Show Data Table -->
             <?php
-              include "koneksi.php";  
-              if(isset($_POST['submit-search'])) {
-                $search = mysqli_real_escape_string($con, $_POST['search']);
-                $qry = "SELECT m.*, j.nama_jurusan, d.nama_dosen
-                    FROM mahasiswa AS m
-                    INNER JOIN jurusan AS j
-                    ON m.kode_jurusan = j.kode_jurusan
-                    INNER JOIN dosen AS d
-                    ON m.nidn = d.nidn
-                    WHERE
-                      m.nim           LIKE '%$search%' OR m.nama_mhs      LIKE '%$search%' OR
-                      m.kode_jurusan  LIKE '%$search%' OR m.jenis_kelamin LIKE '%$search%' OR
-                      m.alamat        LIKE '%$search%' OR m.no_hp         LIKE '%$search%' OR
-                      m.email         LIKE '%$search%' OR m.nidn          LIKE '%$search%' OR
-                      j.nama_jurusan  LIKE '%$search%' OR d.nama_dosen    LIKE '%$search%'"; 
-
-                $exec = mysqli_query($con, $qry);
-                $qryResult = mysqli_num_rows($exec);
-
-                if ($qryResult > 0){
-                  while ($data = mysqli_fetch_assoc($exec)) {
+            selectData();
             ?>
-              
-              <tbody class="table-body">
-                <tr>
-                  <td class="text-center"> <?php echo $data['nim']            ?> </td>
-                  <td class="text-center"> <?php echo $data['nama_mhs']       ?> </td>
-                  <td class="text-center"> <?php echo $data['nama_jurusan']   ?> </td>
-                  <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
-                  <td class="text-center"> <?php echo $data['alamat']         ?> </td>
-                  <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
-                  <td class="text-center"> <?php echo $data['email']          ?> </td>
-                  <td class="text-center"> <?php echo $data['nama_dosen']     ?> </td>
-                  <td class="text-center"> 
-                    <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
-                  </td>
-                  <td class="text-center"> 
-                    <a style="color:black;" href="proses_delete_mhs.php?nim=<?php echo $data['nim']?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
-                  </td>
-                </tr>
-            <?php 
-                } 
-              } else {
-                echo "<p style='color:white; font-size:larger;'> Data tidak ditemukan! </p>";
-              }
-            } 
-            ?>
-            </tbody>
           </table>
         </div>
     </div>
