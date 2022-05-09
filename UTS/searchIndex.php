@@ -91,7 +91,7 @@
             </thead>
           <!-- Show Data Table -->
             <?php
-            selectData();
+              selectData();
             ?>
           </table>
         </div>

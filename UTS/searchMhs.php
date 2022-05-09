@@ -1,3 +1,47 @@
+<?php
+   function selectData() {
+    include "koneksi.php";  
+    if(isset($_POST['submit-search'])) {
+      $search = mysqli_real_escape_string($con, $_POST['search']);
+      $qry = "SELECT DISTINCT mahasiswa.*
+          FROM mahasiswa 
+          WHERE
+            mahasiswa.nim           LIKE '%$search%' OR mahasiswa.nama_mhs      LIKE '%$search%' OR
+            mahasiswa.kode_jurusan  LIKE '%$search%' OR mahasiswa.jenis_kelamin LIKE '%$search%' OR
+            mahasiswa.alamat        LIKE '%$search%' OR mahasiswa.no_hp         LIKE '%$search%' OR
+            mahasiswa.email         LIKE '%$search%' OR mahasiswa.nidn          LIKE '%$search%'
+          ORDER BY mahasiswa.nim";
+
+      $exec = mysqli_query($con, $qry);
+      $qryResult = mysqli_num_rows($exec);
+
+      if ($qryResult > 0){
+        while ($data = mysqli_fetch_assoc($exec)) {
+  ?>
+    
+    <tbody class="table-body">
+      <tr>
+        <td class="text-center"> <?php echo $data['nim']            ?> </td>
+        <td class="text-center"> <?php echo $data['nama_mhs']       ?> </td>
+        <td class="text-center"> <?php echo $data['kode_jurusan']   ?> </td>
+        <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
+        <td class="text-center"> <?php echo $data['alamat']         ?> </td>
+        <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
+        <td class="text-center"> <?php echo $data['email']          ?> </td>
+        <td class="text-center"> <?php echo $data['nidn']           ?> </td>
+      </tr>
+  <?php 
+      } 
+    } else {
+      echo "<p style='color:white; font-size:larger;'> Data tidak ditemukan! </p>";
+    }
+  } 
+  ?>
+  </tbody>
+  <?php
+   }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -35,46 +79,10 @@
                 <th scope="col">NIDN</th>
               </tr>
             </thead>
-
+          <!-- Show Data Table -->
             <?php
-              include "koneksi.php";  
-              if(isset($_POST['submit-search'])) {
-                $search = mysqli_real_escape_string($con, $_POST['search']);
-                $qry = "SELECT DISTINCT mahasiswa.*
-                    FROM mahasiswa 
-                    WHERE
-                      mahasiswa.nim           LIKE '%$search%' OR mahasiswa.nama_mhs      LIKE '%$search%' OR
-                      mahasiswa.kode_jurusan  LIKE '%$search%' OR mahasiswa.jenis_kelamin LIKE '%$search%' OR
-                      mahasiswa.alamat        LIKE '%$search%' OR mahasiswa.no_hp         LIKE '%$search%' OR
-                      mahasiswa.email         LIKE '%$search%' OR mahasiswa.nidn          LIKE '%$search%'
-                    ORDER BY mahasiswa.nim";
-
-                $exec = mysqli_query($con, $qry);
-                $qryResult = mysqli_num_rows($exec);
-
-                if ($qryResult > 0){
-                  while ($data = mysqli_fetch_assoc($exec)) {
+              selectData();
             ?>
-              
-              <tbody class="table-body">
-                <tr>
-                  <td class="text-center"> <?php echo $data['nim']            ?> </td>
-                  <td class="text-center"> <?php echo $data['nama_mhs']       ?> </td>
-                  <td class="text-center"> <?php echo $data['kode_jurusan']   ?> </td>
-                  <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
-                  <td class="text-center"> <?php echo $data['alamat']         ?> </td>
-                  <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
-                  <td class="text-center"> <?php echo $data['email']          ?> </td>
-                  <td class="text-center"> <?php echo $data['nidn']           ?> </td>
-                </tr>
-            <?php 
-                } 
-              } else {
-                echo "<p style='color:white; font-size:larger;'> Data tidak ditemukan! </p>";
-              }
-            } 
-            ?>
-            </tbody>
           </table>
         </div>
     </div>
