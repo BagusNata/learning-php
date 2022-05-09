@@ -15,76 +15,71 @@
       include "navbar.php";
     ?>
 
-        <!-- Content -->
-          <div class="container"> 
-          </br> </br>
-          <h1 class="title">UJIAN TENGAH SEMESTER</h1>
-          </br> </br> 
-        <!-- SearchBox -->
-          <form class="search-box-body" action="searchIndex.php" method="POST">
-            <input class="input-shape" type="text" placeholder="Search..." name="search">
-            <button class="button-search" type="submit" name="submit-search"> 
-              <i class="fa fa-search"></i>
-            </button>
-          </form>
-        <!-- Table -->
-          <div class="table-responsive-sm shadow">
-            <table class="table" border="3">
-              <thead class="thead-dark table_title">
-                <tr>
-                  <th scope="col">NIM</th>
-                  <th scope="col">Nama Mahasiwa</th>
-                  <th scope="col">Kode Jurusan</th>
-                  <th scope="col">Nama Jurusan</th>
-                  <th scope="col">Gender</th>
-                  <th scope="col">Alamat</th>
-                  <th scope="col">No. Hp</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">NIDN</th>
-                  <th scope="col">Dosen Wali</th>
-                  <th scope="col" colspan="2">Action</th>
-                </tr>
-              </thead>
+    <!-- Content -->
+      <div class="container"> 
+      </br> </br>
+      <h1 class="title">UJIAN TENGAH SEMESTER</h1>
+      </br> </br> 
+    <!-- SearchBox -->
+      <form class="search-box-body" action="searchIndex.php" method="POST">
+        <input class="input-shape" type="text" placeholder="Search..." name="search">
+        <button class="button-search" type="submit" name="submit-search"> 
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+    <!-- Table -->
+      <div class="table-responsive-sm shadow">
+        <table class="table" border="3">
+          <thead class="thead-dark table_title">
+            <tr>
+              <th scope="col">NIM</th>
+              <th scope="col">Nama Mahasiwa</th>
+              <th scope="col">Nama Jurusan</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Alamat</th>
+              <th scope="col">No. Hp</th>
+              <th scope="col">Email</th>
+              <th scope="col">Dosen Wali</th>
+              <th scope="col" colspan="2">Action</th>
+            </tr>
+          </thead>
 
-              <?php
-                include "koneksi.php";
+          <?php
+              include "koneksi.php";
 
-                $qry = "SELECT 
-                            mahasiswa.*, jurusan.nama_jurusan, dosen.nama_dosen
-                        FROM
-                            jurusan, mahasiswa , dosen
-                        WHERE
-                            mahasiswa.kode_jurusan = jurusan.kode_jurusan AND
-                            mahasiswa.nidn = dosen.nidn
-                        ORDER BY mahasiswa.nim";
-                $exec = mysqli_query($con, $qry);
-                while($data = mysqli_fetch_array($exec)) {
-              ?>
+            $qry = "SELECT m.*, j.nama_jurusan, d.nama_dosen
+                    FROM mahasiswa AS m
+                    INNER JOIN jurusan AS j
+                    ON m.kode_jurusan = j.kode_jurusan
+                    INNER JOIN dosen AS d
+                    ON m.nidn = d.nidn
+                    ORDER BY m.nim";
+            $exec = mysqli_query($con, $qry);
+            while($data = mysqli_fetch_array($exec)) {
+          ?>
 
-              <tbody class="table-body">
-                <tr>
-                  <td class="text-center"> <?php echo $data['nim']            ?> </td>
-                  <td class="text-center"> <?php echo $data['nama_mhs']       ?> </td>
-                  <td class="text-center"> <?php echo $data['kode_jurusan']   ?> </td>
-                  <td class="text-center"> <?php echo $data['nama_jurusan']   ?> </td>
-                  <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
-                  <td class="text-center"> <?php echo $data['alamat']         ?> </td>
-                  <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
-                  <td class="text-center"> <?php echo $data['email']          ?> </td>
-                  <td class="text-center"> <?php echo $data['nidn']           ?> </td>
-                  <td class="text-center"> <?php echo $data['nama_dosen']     ?> </td>
-                  <td class="text-center"> 
-                    <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
-                  </td>
-                  <td class="text-center"> 
-                    <a style="color:black;" href="proses_delete_mhs.php?nim=<?php echo $data['nim']?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
-                  </td>
-                </tr>
-                <?php } ?>
-              </tbody>
-            </table>
-          </div>
+          <tbody class="table-body">
+            <tr>
+              <td class="text-center"> <?php echo $data['nim']            ?> </td>
+              <td class="text-center"> <?php echo $data['nama_mhs']       ?> </td>
+              <td class="text-center"> <?php echo $data['nama_jurusan']   ?> </td>
+              <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
+              <td class="text-center"> <?php echo $data['alamat']         ?> </td>
+              <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
+              <td class="text-center"> <?php echo $data['email']          ?> </td>
+              <td class="text-center"> <?php echo $data['nama_dosen']     ?> </td>
+              <td class="text-center"> 
+                <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
+              </td>
+              <td class="text-center"> 
+                <a style="color:black;" href="proses_delete_mhs.php?nim=<?php echo $data['nim']?>" class="btn-del"> <img src="Assets/Image/b_drop.png"> Delete </a>
+              </td>
+            </tr>
+            <?php } ?>
+          </tbody>
+        </table>
       </div>
+    </div>
 
     <!-- Untuk merefresh -->
     <?php if (isset ($_GET['m'])) : ?>

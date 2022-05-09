@@ -27,13 +27,11 @@
               <tr>
                 <th scope="col">NIM</th>
                 <th scope="col">Nama Mahasiwa</th>
-                <th scope="col">Kode Jurusan</th>
                 <th scope="col">Nama Jurusan</th>
                 <th scope="col">Gender</th>
                 <th scope="col">Alamat</th>
                 <th scope="col">No. Hp</th>
                 <th scope="col">Email</th>
-                <th scope="col">NIDN</th>
                 <th scope="col">Dosen Wali</th>
                 <th scope="col" colspan="2">Action</th>
               </tr>
@@ -67,13 +65,11 @@
                 <tr>
                   <td class="text-center"> <?php echo $data['nim']            ?> </td>
                   <td class="text-center"> <?php echo $data['nama_mhs']       ?> </td>
-                  <td class="text-center"> <?php echo $data['kode_jurusan']   ?> </td>
                   <td class="text-center"> <?php echo $data['nama_jurusan']   ?> </td>
                   <td class="text-center"> <?php echo $data['jenis_kelamin']  ?> </td>
                   <td class="text-center"> <?php echo $data['alamat']         ?> </td>
                   <td class="text-center"> <?php echo $data['no_hp']          ?> </td>
                   <td class="text-center"> <?php echo $data['email']          ?> </td>
-                  <td class="text-center"> <?php echo $data['nidn']           ?> </td>
                   <td class="text-center"> <?php echo $data['nama_dosen']     ?> </td>
                   <td class="text-center"> 
                     <a style="color:black;" href="editMhs.php?nim=<?php echo $data['nim']?>" class="btn-edit"> <img src="Assets/Image/b_edit.png"> Edit </a>
