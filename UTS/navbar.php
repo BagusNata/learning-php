@@ -3,7 +3,7 @@
         <ul class="navbar-nav">
           <!-- Navbar home -->
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.php">Home</a>
             </li>
           <!-- Navbar Insert -->
             <li class="nav-item dropdown active">
@@ -48,6 +48,10 @@
                 <a class="dropdown-item" href="deleteJurusan.php">Data Jurusan</a>
                 <a class="dropdown-item" href="deleteDosen.php">Data dosen</a>
               </div>
+            </li>
+           <!-- Navbar Logout -->
+            <li class="nav-item active">
+              <a class="nav-link" href="logout.php">Logout</a>
             </li>
         </ul>
       </div>

@@ -99,7 +99,7 @@
                         $exec = mysqli_query($con, $qry);
                       ?>
                       <!--Buat option-->
-                        <select name="jurusan" id="jurusan">
+                        <select name="nidn" id="nidn">
                           <?php while ($row1 = mysqli_fetch_array($exec)):; ?>
                             <option value="<?php echo $row1[0]; ?>"><?php echo $row1[1]; ?></option>
                           <?php endwhile; ?>

@@ -1,4 +1,15 @@
 <?php
+  function sessionCheck() {
+    //mengecek session
+    session_start();
+    //belum login
+    if(empty($_SESSION['username'])){
+      $_SESSION['username'] = $data['username'];
+      echo "<script> alert('Anda belum login, silahkan login terlebih dahulu!'); 
+      window.location = 'login.php'; </script>";
+    }
+   }
+
    function search() {
      ?>
      <form class="search-box-body" action="searchIndex.php" method="POST">
@@ -58,6 +69,10 @@
   </head>
 
   <body>
+    <!-- Session Check -->
+      <?php
+        sessionCheck();
+      ?>
     <!-- NAVBAR -->
     <?php
       include "navbar.php";
@@ -96,6 +111,7 @@
       </div>
     </div>
 
+
     <!-- Untuk merefresh -->
     <?php if (isset ($_GET['m'])) : ?>
       <div class="flash-data" data-flashdata="<?= $_GET['m']; ?>"></div>
@@ -107,6 +123,22 @@
     <script src="jquery-3.6.0.min.js"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script>
+       $('.btn-sessionTimeOut').on('click', function(e) {
+          e.preventDefault();
+          const href = $(this).attr('href')
+          Swal.fire({
+              title : "Session Time Out",
+              text  : 'You will redirected to login page!',
+              icon  : 'warning',
+              confirmButtonColor: '#3085d6',
+              confirmButtonText : 'Yes',
+          }). then ((result) => {
+                  if (result.value) {
+                      document.location.href = href;
+                  }
+          })
+      })
+
       $('.btn-edit').on('click', function(e) {
           e.preventDefault();
           const href = $(this).attr('href')
