@@ -3,22 +3,50 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="Assets/stylesUTS.css">
-    <title>Halaman Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="Assets/styles.css">
+    <title>Login - Bagus Nata</title>
+    <link rel="icon" href="Assets/Image/Logo.png" type="image/jpg" />
   </head>
 
-<body style="margin: 2rem;">
-  <h2>Silahkan Login</h2>
-  <form action="proses_login.php" method="POST">
-    <label> Username  : </label> <br>
-    <input type="text" name="username"> <br>
-    <label> Password  : </label> <br>
-    <input type="password" name="password"> <br> <br>
-    <button  type="submit" class="btn btn-success btn-form loginSuccess"> Login </button>
-  </form>
-</body>
+  <body class="bg-login">
+    <!-- -->
+    <div class=" d-flex">
+      <div class="col-sm-6">
+      </div>
+      <div class="col-sm-6 position-absolute top-50 end-0 translate-middle-y">
+        <div class="form-login-display">
+          <div class="table-responsive-sm login-form-body shadow-login" >
+            <form class="form-login-content" action="proses_login.php" method="POST">
+              <div>
+                <legend class="text-center login-tittle"><strong>Login</strong></legend>
+                <!-- Username -->
+                <div class="mb-3">
+                  <label class="form-label label-font">Username / Email</label>
+                  <input type="text" class="form-control input-display" name="username">
+                </div>
+                <!-- Password -->
+                <div class="mb-3">
+                  <label class="form-label label-font">Password</label>
+                  <input type="password" class="form-control input-display" name="password" >
+                </div>
+                <button  
+                  type="submit" 
+                  class="btn btn-success btn-form-login btn-login"> 
+                      Login 
+                </button>
+                <button  
+                  type="button"
+                  onclick="document.location='signUp.php'"
+                  class="btn btn-outline-primary btn-form-signup btn-signup"> 
+                      Sign up 
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <!-- Untuk merefresh -->
     <?php if (isset ($_GET['m'])) : ?>
@@ -44,6 +72,6 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

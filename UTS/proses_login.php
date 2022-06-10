@@ -9,7 +9,7 @@ include "koneksi.php";
 
 //mencocokkan data user(username,password) pada database
 $qry = "SELECT * FROM user 
-WHERE username = '$username' AND password = '$password'";
+WHERE (username = '$username' OR email = '$username') AND password = '$password'";
 
 $exec = mysqli_query($con, $qry);
 $data = mysqli_fetch_assoc($exec);
