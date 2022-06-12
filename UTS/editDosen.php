@@ -38,29 +38,29 @@ $data = mysqli_fetch_array($exec);
               <b>Lengkapi Biodata Dengan Benar</b> <br>
                 <table>
                   <tr>
-                    <td class="td-space">NIDN (Nomor Induk Dosen Nasional)</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="nidn" value="<?php echo $data['nidn'] ?>" readonly></td>
+                    <td><div class="td-space">NIDN (Nomor Induk Dosen Nasional)</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="nidn" value="<?php echo $data['nidn'] ?>" readonly></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Nama Dosen</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="namaDosen" value="<?php echo $data['nama_dosen'] ?>"></td>
+                    <td><div class="td-space">Nama Dosen</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="namaDosen" value="<?php echo $data['nama_dosen'] ?>"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Pendidikan</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="pendidikan" value="<?php echo $data['pendidikan'] ?>"></td>
+                    <td><div class="td-space">Pendidikan</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="pendidikan" value="<?php echo $data['pendidikan'] ?>"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Tanggal Lahir</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="date" name="tglLahir" value="<?php echo $data['tgl_lahir'] ?>"></td>
+                    <td><div class="td-space">Tanggal Lahir</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="date" name="tglLahir" value="<?php echo $data['tgl_lahir'] ?>"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Jenis Kelamin</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space">
+                    <td><div class="td-space">Jenis Kelamin</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td class="form-input td-space">
                       <?php if ($data['jenis_kelamin'] == 1) { ?>
                           <input type="radio" name="gender" value="1" checked>Laki - Laki
                           <input type="radio" name="gender" value="2">Perempuan
@@ -71,24 +71,24 @@ $data = mysqli_fetch_array($exec);
                     </td>
                   </tr>
                   <tr>
-                    <td class="td-space">Alamat</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="alamat" value="<?php echo $data['alamat'] ?>"></td>
+                    <td><div class="td-space">Alamat</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="alamat" value="<?php echo $data['alamat'] ?>"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">No HP</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="number" name="phoneNumber" value="<?php echo $data['no_hp'] ?>"></td>
+                    <td><div class="td-space">No. HP</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="number" name="phoneNumber" value="<?php echo $data['no_hp'] ?>"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Email</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="email" name="email" value="<?php echo $data['email'] ?>"></td>
+                    <td><div class="td-space">Email</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="email" name="email" value="<?php echo $data['email'] ?>"></td>
                   </tr>
                   <tr>
                     <td></td>
                     <td></td>
-                    <td class="td-space">
+                    <td>
                       <!-- button update -->
                       <button 
                         type="submit" 

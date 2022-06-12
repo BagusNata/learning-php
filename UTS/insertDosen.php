@@ -29,52 +29,52 @@
               <b>Lengkapi Biodata Dengan Benar</b>
                 <table>
                   <tr>
-                    <td class="td-space">NIDN (Nomor Induk Dosen Nasional)</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="nidn"></td>
+                    <td><div class="td-space">NIDN (Nomor Induk Dosen Nasional)</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="nidn"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Nama Dosen</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="namaDosen"></td>
+                    <td><div class="td-space">Nama Dosen</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="namaDosen"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Pendidikan</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="pendidikan"></td>
+                    <td><div class="td-space">Pendidikan</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="pendidikan"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Tanggal Lahir</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="date" name="tglLahir"></td>
+                    <td><div class="td-space">Tanggal Lahir</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="date" name="tglLahir"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Jenis Kelamin</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space">
+                    <td><div class="td-space">Jenis Kelamin</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td class="form-input td-space">
                       <input type="radio" name="gender" value="1"> Male
                       <input type="radio" name="gender" value="2"> Female
                     </td>
                   </tr>
                   <tr>
-                    <td class="td-space">Alamat</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="alamat"></td>
+                    <td><div class="td-space">Alamat</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="alamat"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">No HP</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="number" name="phoneNumber"></td>
+                    <td><div class="td-space">No. HP</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="number" name="phoneNumber"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Email</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"> <input type="email" name="email"></td>
+                    <td><div class="td-space">Email</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="email" name="email"></td>
                   </tr>
                   <tr>
                     <td></td>
                     <td></td>
-                    <td class="td-space">
+                    <td>
                       <!-- button update -->
                       <button
                         type="submit" 

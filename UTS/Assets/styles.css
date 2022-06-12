@@ -129,7 +129,7 @@
   cursor: pointer;
 }
 .button-search:hover {
-  background: #62acb5;
+  background: #fbc158;
 }
 form.search-box::after {
   content: "";
@@ -180,8 +180,14 @@ form.search-box::after {
   padding: 2rem 3rem;
   border-radius: 30px;
 }
+.form-input {
+  width: 20rem;
+  border-radius: 6px;
+  margin: 5px 0;
+}
 .td-space {
   padding: 0 1rem;
+  margin: 5px 0;
 }
 
 /* SELECT MAHASISWA */

@@ -38,19 +38,19 @@ $data = mysqli_fetch_array($exec);
               <b>Lengkapi Biodata Dengan Benar</b> <br>
                 <table>
                   <tr>
-                    <td class="td-space">Kode Jurursan</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="kode_jurusan" value="<?php echo $data['kode_jurusan'] ?>" readonly></td>
+                    <td><div class="td-space">Kode Jurursan</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="kode_jurusan" value="<?php echo $data['kode_jurusan'] ?>" readonly></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Nama Jurursan</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="nama_jurusan" value="<?php echo $data['nama_jurusan'] ?>"></td>
+                    <td><div class="td-space">Nama Jurursan</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="nama_jurusan" value="<?php echo $data['nama_jurusan'] ?>"></td>
                     </tr>
                   <tr>
                     <td></td>
                     <td></td>
-                    <td class="td-space">
+                    <td>
                       <!-- button update -->
                       <button
                         type="submit" 

@@ -20,7 +20,6 @@
   echo $nidn          . "<br>";
   echo $foto          . "<br>";
 
-
 //Membuat koneksi database
   include "koneksi.php";
 
@@ -40,8 +39,17 @@
 
     $allowed = array('jpg', 'jpeg', 'png');
 
-    if (isset($_POST['uploadFoto'])) {
-      //kalo submit foto
+    if ($fileTmpName == NULL) {
+     //kalo gk submit foto
+      //Proses upload data ke database
+        include "koneksi.php";
+        $qry = "INSERT INTO mahasiswa 
+                VALUES ('$nim','$nama_mhs','$kode_jurusan','$jenis_kelamin','$alamat','$no_hp',
+                '$email','$nidn','')";
+        $exec = mysqli_query($con, $qry);
+        header('location: index.php?m=1');
+    } else {
+       //kalo submit foto
       if(in_array($fileActualExt, $allowed)) {
         if($fileError === 0) {
           if($fileSize < 500000) {
@@ -64,15 +72,6 @@
       } else {
         echo "Maaf, type file ini tidak diijinkan!";
       }
-    } else {
-      //kalo gk submit foto
-      //Proses upload data ke database
-        include "koneksi.php";
-        $qry = "INSERT INTO mahasiswa 
-                VALUES ('$nim','$nama_mhs','$kode_jurusan','$jenis_kelamin','$alamat','$no_hp',
-                '$email','$nidn','')";
-        $exec = mysqli_query($con, $qry);
-        header('location: index.php?m=1');
     }
   };
 ?>

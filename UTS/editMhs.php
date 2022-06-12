@@ -37,26 +37,26 @@
               <b>Lengkapi Biodata Dengan Benar</b> <br>
                 <table>
                   <tr>
-                    <td class="td-space">NIM (Nomor Induk Mahasiswa)</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="nomorIndukMahasiswa" value="<?php echo $data['nim'] ?>" readonly></td>
+                    <td><div class="td-space">NIM (Nomor Induk Mahasiswa)</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="nomorIndukMahasiswa" value="<?php echo $data['nim'] ?>" readonly></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Nama Mahasiswa</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="namaMahasiswa" value="<?php echo $data['nama_mhs'] ?>"></td>
+                    <td><div class="td-space">Nama Mahasiswa</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="namaMahasiswa" value="<?php echo $data['nama_mhs'] ?>"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Jurusan</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space">
+                    <td><div class="td-space">Jurusan</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td>
                       <?php
                         include "koneksi.php";
                         $qry = "SELECT * FROM jurusan";
                         $exec = mysqli_query($con, $qry);
                       ?>
                       <!--Buat option-->
-                        <select name="jurusan" id="jurusan">
+                        <select class="form-input td-space" name="jurusan" id="jurusan">
                           <?php while ($row1 = mysqli_fetch_array($exec)):; ?>
                             <option value="<?php echo $row1[0]; ?>"><?php echo $row1[1]; ?></option>
                           <?php endwhile; ?>
@@ -64,9 +64,9 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="td-space">Jenis Kelamin</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space">
+                    <td><div class="td-space">Jenis Kelamin</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td class="form-input td-space">
                       <?php if ($data['jenis_kelamin'] == 1) { ?>
                           <input type="radio" name="gender" value="1" checked>Laki - Laki
                           <input type="radio" name="gender" value="2">Perempuan
@@ -77,31 +77,31 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="td-space">Alamat</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="alamat" value="<?php echo $data['alamat'] ?>"></td>
+                    <td><div class="td-space">Alamat</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="alamat" value="<?php echo $data['alamat'] ?>"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">No HP</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="number" name="phoneNumber" value="<?php echo $data['no_hp'] ?>"></td>
+                    <td><div class="td-space">No. HP</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="number" name="phoneNumber" value="<?php echo $data['no_hp'] ?>"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Email</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="email" name="email" value="<?php echo $data['email'] ?>"></td>
+                    <td><div class="td-space">Email</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="email" name="email" value="<?php echo $data['email'] ?>"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">NIDN (Nomor Induk Dosen Nasional)</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space">
+                    <td><div class="td-space">Dosen Wali</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td>
                       <?php
                         include "koneksi.php";
                         $qry = "SELECT * FROM dosen";
                         $exec = mysqli_query($con, $qry);
                       ?>
                       <!--Buat option-->
-                        <select name="nidn" id="nidn">
+                        <select class="form-input td-space" name="nidn" id="nidn">
                           <?php while ($row1 = mysqli_fetch_array($exec)):; ?>
                             <option value="<?php echo $row1[0]; ?>"><?php echo $row1[1]; ?></option>
                           <?php endwhile; ?>
@@ -109,14 +109,14 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="td-space">Foto</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="file" name="uploadFoto" value="<?php echo $data['foto'] ?>"></td>
+                    <td><div class="td-space">Foto</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input type="file" name="uploadFoto" value="<?php echo $data['foto'] ?>"></td>
                   </tr>
                   <tr>
                     <td></td>
                     <td></td>
-                    <td class="td-space">
+                    <td>
                       <!-- button update -->
                       <button 
                         type="submit"

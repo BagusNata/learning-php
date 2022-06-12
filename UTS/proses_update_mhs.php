@@ -39,7 +39,18 @@
 
     $allowed = array('jpg', 'jpeg', 'png');
 
-    if (isset($_POST['uploadFoto'])) {
+    if ($fileTmpName == NULL) {
+      //kalo gk submit foto
+      //Proses upload data ke database
+        include "koneksi.php";
+        $qry = "UPDATE mahasiswa
+        SET nama_mhs = '$nama_mhs', kode_jurusan = '$kode_jurusan', 
+                jenis_kelamin = '$jenis_kelamin', alamat = '$alamat', 
+                no_hp = '$no_hp', email = '$email', nidn = '$nidn'
+            WHERE nim = '$nim' ";
+        $exec = mysqli_query($con, $qry);
+        header('location: index.php?m=1');
+    } else {
       //kalo submit foto
       if(in_array($fileActualExt, $allowed)) {
         if($fileError === 0) {
@@ -66,17 +77,6 @@
       } else {
           echo "Maaf, type file ini tidak diijinkan!";
       }
-    } else {
-      //kalo gk submit foto
-      //Proses upload data ke database
-        include "koneksi.php";
-        $qry = "UPDATE mahasiswa
-        SET nama_mhs = '$nama_mhs', kode_jurusan = '$kode_jurusan', 
-                jenis_kelamin = '$jenis_kelamin', alamat = '$alamat', 
-                no_hp = '$no_hp', email = '$email', nidn = '$nidn'
-            WHERE nim = '$nim' ";
-        $exec = mysqli_query($con, $qry);
-        header('location: index.php?m=1');
     }
   }
 ?>

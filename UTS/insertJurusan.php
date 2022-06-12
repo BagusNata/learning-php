@@ -29,19 +29,19 @@
               <b>Lengkapi Data ini Dengan Benar</b>
                 <table>
                   <tr>
-                    <td class="td-space">Kode Jurursan</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="kode_jurusan"></td>
+                    <td><div class="td-space">Kode Jurursan</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="kode_jurusan"></td>
                   </tr>
                   <tr>
-                    <td class="td-space">Nama Jurursan</td>
-                    <td class="td-space"> : </td>
-                    <td class="td-space"><input type="text" name="nama_jurusan"></td>
+                    <td><div class="td-space">Nama Jurursan</div></td>
+                    <td><div class="td-space">:</div></td>
+                    <td><input class="form-input td-space" type="text" name="nama_jurusan"></td>
                   </tr>
                   <tr>
                     <td></td>
                     <td></td>
-                    <td class="td-space">
+                    <td>
                       <!-- button update -->
                       <button "
                         type="submit" 
