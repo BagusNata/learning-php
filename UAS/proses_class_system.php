@@ -13,12 +13,23 @@ class signup extends database{
 	}
 };
 
+class login extends database{
+	function login_user($data){
+		$qry = "SELECT * FROM user 
+        		WHERE (username = '".$data['username']."' OR email = '".$data['username']."') 
+						AND password = '".$data['password']."' "  or die(mysqli_error($this->conn));
+		$exec = mysqli_query($this->conn, $qry);
+		$data = mysqli_fetch_array($exec);
+		return $data;
+	}
+};
+
 class mahasiswa extends database{
 
 	function __construct(){
 		parent::__construct();
 
-		//mengecek session
+		//memulai session
     session_start();
     //belum login
     if(empty($_SESSION['username'])){
@@ -225,17 +236,6 @@ class mahasiswa extends database{
       }
     }
 	}
-
-	function print_option_update_jurusan(){
-		$qry = "SELECT * FROM jurusan";
-    $exec = mysqli_query($this->conn, $qry);
-					
-		while($row = mysqli_fetch_assoc($exec)){
-			$data[] = $row;
-		}
-		return $data;
-	}
-
 };
 
 class jurusan extends database{
@@ -243,7 +243,7 @@ class jurusan extends database{
 	function __construct(){
 		parent::__construct();
 
-		//mengecek session
+		//memulai session
     session_start();
     //belum login
     if(empty($_SESSION['username'])){
@@ -326,7 +326,7 @@ class dosen extends database{
 	function __construct(){
 		parent::__construct();
 
-		//mengecek session
+		//memulai session
     session_start();
     //belum login
     if(empty($_SESSION['username'])){
