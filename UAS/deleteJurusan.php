@@ -51,13 +51,7 @@
             </tbody>
         </table>
       </div>
-
     </div>
-
-    <!-- Untuk merefresh -->
-    <?php if (isset ($_GET['m'])) : ?>
-      <div class="flash-data" data-flashdata="<?= $_GET['m']; ?>"></div>
-    <?php endif; ?>
 
     <!-- Optional JavaScript -->
     <!-- SweetAlert2 --> 
@@ -81,16 +75,8 @@
                   }
           })
       })
-
-      const flashdata = $('.flash-data').data('flashdata')
-      if (flashdata) {
-          Swal.fire({
-              icon  : 'success',
-              title : 'Success',
-              text  : 'Record has been deleted!',
-          })
-      }
     </script>
+    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
