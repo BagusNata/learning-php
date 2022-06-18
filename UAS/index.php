@@ -109,47 +109,30 @@
     </div>
 
     <!-- Untuk merefresh -->
-    <?php if (isset ($_GET['m'])) : ?>
-      <div class="flash-data" data-flashdata="<?= $_GET['m']; ?>"></div>
-    <?php endif; ?>
+     <?php if ($_GET['m'] == "success") {?>
+        <div class="login-user" data-login="<?= $_GET['m'] == "success"; ?>"></div>
+    <?php } ?>
 
-  
     <!-- Optional JavaScript --> 
     <!-- SweetAlert2 --> 
     <script src="jquery-3.6.0.min.js"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script>
-       $('.btn-sessionTimeOut').on('click', function(e) {
-          e.preventDefault();
-          const href = $(this).attr('href')
-          Swal.fire({
-              title : "Session Time Out",
-              text  : 'You will redirected to login page!',
-              icon  : 'warning',
-              confirmButtonColor: '#3085d6',
-              confirmButtonText : 'Yes',
-          }). then ((result) => {
-                  if (result.value) {
-                      document.location.href = href;
-                  }
-          })
-      })
-
       $('.btn-edit').on('click', function(e) {
           e.preventDefault();
           const href = $(this).attr('href')
           Swal.fire({
-              title : "Are You Sure?",
-              text  : 'You will redirected to edit page!',
-              icon  : 'warning',
-              showCancelButton  : true,
-              confirmButtonColor: '#3085d6',
-              cancelButtonColor : '#d33',
-              confirmButtonText : 'Yes',
+            title : "Are You Sure?",
+            text  : 'You will redirected to edit page!',
+            icon  : 'warning',
+            showCancelButton  : true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor : '#d33',
+            confirmButtonText : 'Yes',
           }). then ((result) => {
-                  if (result.value) {
-                      document.location.href = href;
-                  }
+                if (result.value) {
+                    document.location.href = href;
+                }
           })
       })
       
@@ -157,26 +140,28 @@
           e.preventDefault();
           const href = $(this).attr('href')
           Swal.fire({
-              title : "Are You Sure?",
-              text  : 'Record will be deleted?',
-              icon  : 'warning',
-              showCancelButton  : true,
-              confirmButtonColor: '#3085d6',
-              cancelButtonColor : '#d33',
-              confirmButtonText : 'Delete Record',
+            title : "Are You Sure?",
+            text  : 'Record will be deleted?',
+            icon  : 'warning',
+            showCancelButton  : true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor : '#d33',
+            confirmButtonText : 'Delete Record',
           }). then ((result) => {
-                  if (result.value) {
-                      document.location.href = href;
-                  }
+                if (result.value) {
+                    document.location.href = href;
+                }
           })
       })
 
-      const flashdata = $('.flash-data').data('flashdata')
-      if (flashdata) {
+      const login = $('.login-user').data('login')
+      if (login) {
           Swal.fire({
-              icon  : 'success',
-              title : 'Success',
-              text  : 'Record has been deleted!',
+            timer: 3500,
+            timerProgressBar: true,
+            icon  : 'success',
+            title : 'Login Success',
+            text  : 'Welcome to home page!',
           })
       }
     </script>
