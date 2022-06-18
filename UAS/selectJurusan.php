@@ -68,7 +68,7 @@
 
     <!-- Untuk merefresh -->
     <?php if (isset ($_GET['m'])) : ?>
-      <div class="flash-data" data-flashdata="<?= $_GET['m']; ?>"></div>
+      <div class="update-data" data-update_data="<?= $_GET['m']; ?>"></div>
     <?php endif; ?>
 
     <!-- Optional JavaScript -->
@@ -76,12 +76,12 @@
     <script src="jquery-3.6.0.min.js"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script>
-      const flashdata = $('.flash-data').data('flashdata')
-      if (flashdata) {
+      const update = $('.update-data').data('update_data')
+      if (update) {
           Swal.fire({
               icon  : 'success',
               title : 'Success',
-              text  : 'Record has been deleted!',
+              text  : 'Record has been updated!',
           })
       }
     </script>
