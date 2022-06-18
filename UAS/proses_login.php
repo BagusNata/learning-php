@@ -13,9 +13,9 @@
       //Memulai session
       session_start();
       $_SESSION['username'] = $data['username'];
-			header('location: index.php');
+			header('location: index.php?m=success');
 		}else{
-			echo "Login gagal, user tidak ditemukan";;
+			header('location: login.php?m=fail');
 		}
 	}
 ?>

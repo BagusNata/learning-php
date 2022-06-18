@@ -34,8 +34,7 @@ class mahasiswa extends database{
     //belum login
     if(empty($_SESSION['username'])){
       $_SESSION['username'] = $data['username'];
-      echo "<script> alert('Anda belum login, silahkan login terlebih dahulu!'); 
-      window.location = 'login.php'; </script>";
+      header('location: login.php?m=timeout');
     }
 	}
 
@@ -248,8 +247,7 @@ class jurusan extends database{
     //belum login
     if(empty($_SESSION['username'])){
       $_SESSION['username'] = $data['username'];
-      echo "<script> alert('Anda belum login, silahkan login terlebih dahulu!'); 
-      window.location = 'login.php'; </script>";
+      header('location: login.php?m=timeout');
     }
 	}
 
@@ -331,8 +329,7 @@ class dosen extends database{
     //belum login
     if(empty($_SESSION['username'])){
       $_SESSION['username'] = $data['username'];
-      echo "<script> alert('Anda belum login, silahkan login terlebih dahulu!'); 
-      window.location = 'login.php'; </script>";
+      header('location: login.php?m=timeout');
     }
 	}
 
