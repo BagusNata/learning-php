@@ -54,22 +54,12 @@
                       <select class="form-input td-space" name="jurusan" id="jurusan">
                       <!--Buat option-->
                         <?php
-                          foreach($cmahasiswa->print_option_update_jurusan() as $option) {
-                          if ($data['kode_jurusan'] == $option){
-                        ?>
-                            <option 
-                              selected="selected"
-                              value=" <?php echo $option['kode_jurusan']?>"
-                            > 
-                            <?php echo $option['nama_jurusan'] ?> </option>;
-                        <?php
-                          } else { 
-                        ?> 
-                            <option value="<?php echo $option['kode_jurusan']?>"> 
-                              <?php echo $option['nama_jurusan'] ?> 
-                            </option>;
-                        <?php
-                          }
+                          foreach($cmahasiswa->print_option_jurusan() as $option) {
+                            if ($option['kode_jurusan'] == $data['kode_jurusan']){
+                              echo "<option selected='selected' value='".$option['kode_jurusan']."'>".$option['nama_jurusan']."</option>";
+                            } else { 
+                              echo "<option value='".$option['kode_jurusan']."'>".$option['nama_jurusan']."</option>";
+                            }
                          } 
                         ?>
                       </select>
@@ -110,12 +100,14 @@
                       <select class="form-input td-space" name="dosen" id="dosen">
                         <!--Buat option-->
                         <?php
-                          foreach($cmahasiswa->print_option_dosen() as $tampil) {
+                          foreach($cmahasiswa->print_option_dosen() as $option) {
+                            if ($option['nidn'] == $data['nidn']){
+                              echo "<option selected='selected' value='".$option['nidn']."'>".$option['nama_dosen']."</option>";
+                            } else { 
+                              echo "<option value='".$option['nidn']."'>".$option['nama_dosen']."</option>";
+                            }
+                         } 
                         ?>
-                          <option value="<?php echo $tampil['nidn']; ?>">
-                            <?php echo $tampil['nama_dosen']; ?>
-                          </option>
-                        <?php } ?>
                       </select>
                     </td>
                   </tr>
