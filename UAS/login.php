@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="Assets/styles.css">
-    <title>Login - Bagus Nata</title>
     <link rel="icon" href="Assets/Image/Logo.png" type="image/jpg" />
+    <title>Login - Bagus Nata</title>
   </head>
 
   <body class="bg-login">
@@ -32,6 +32,7 @@
                 </div>
                 <button  
                   type="submit" 
+                  name="submitLogin"
                   class="btn btn-success btn-form-login btn-login"> 
                       Login 
                 </button>
@@ -49,9 +50,13 @@
     </div>
 
 <!-- Untuk merefresh -->
-    <?php if (isset ($_GET['m'])) : ?>
-      <div class="flash-data" data-flashdata="<?= $_GET['m']; ?>"></div>
-    <?php endif; ?>
+    <?php if ($_GET['m'] == "logout"){ ?>
+      <div class="logout-user" data-logout="<?= $_GET['m'] == "logout"; ?>"></div>
+    <?php } else if ($_GET['m'] == "fail") { ?>
+      <div class="fail-login" data-fail_login="<?= $_GET['m'] == "fail"; ?>"></div>
+   <?php } else { ?>
+      <div class="session-timeout" data-session_timeout="<?= $_GET['m'] == "timeout"; ?>"></div>
+   <?php }  ?>
 
   
     <!-- Optional JavaScript --> 
@@ -59,12 +64,36 @@
     <script src="jquery-3.6.0.min.js"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script>
-      const flashdata = $('.flash-data').data('flashdata')
-      if (flashdata) {
+      const logout = $('.logout-user').data('logout')
+      if (logout) {
           Swal.fire({
-              icon  : 'success',
-              title : 'Thank you',
-              text  : 'You are logged out!',
+            timer: 3500,
+            timerProgressBar: true,
+            icon  : 'success',
+            title : 'Thank you',
+            text  : 'You are logged out!',
+          })
+      }
+
+      const fail = $('.fail-login').data('fail_login')
+      if (fail) {
+          Swal.fire({
+            timer: 3500,
+            timerProgressBar: true,
+            icon  : 'error',
+            title : 'Login Failed',
+            text  : 'Please check your username or password!',
+          })
+      }
+
+      const timeout = $('.session-timeout').data('session_timeout')
+      if (timeout) {
+          Swal.fire({
+            timer: 3500,
+            timerProgressBar: true,
+            icon  : 'warning',
+            title : 'Session Timeout',
+            text  : 'Please re-login to enter the home page!',
           })
       }
     </script>
