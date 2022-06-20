@@ -50,13 +50,15 @@
     </div>
 
 <!-- Untuk merefresh -->
-    <?php if ($_GET['m'] == "logout"){ ?>
-      <div class="logout-user" data-logout="<?= $_GET['m'] == "logout"; ?>"></div>
-    <?php } else if ($_GET['m'] == "fail") { ?>
-      <div class="fail-login" data-fail_login="<?= $_GET['m'] == "fail"; ?>"></div>
-   <?php } else { ?>
-      <div class="session-timeout" data-session_timeout="<?= $_GET['m'] == "timeout"; ?>"></div>
-   <?php }  ?>
+    <?php if (isset ($_GET['m'])) : ?>
+      <?php if ($_GET['m'] == "logout"){ ?>
+        <div class="logout-user" data-logout="<?= $_GET['m'] == "logout"; ?>"></div>
+      <?php } else if ($_GET['m'] == "fail") { ?>
+        <div class="fail-login" data-fail_login="<?= $_GET['m'] == "fail"; ?>"></div>
+    <?php } else { ?>
+        <div class="session-timeout" data-session_timeout="<?= $_GET['m'] == "timeout"; ?>"></div>
+    <?php } ?>
+   <?php endif; ?>
 
   
     <!-- Optional JavaScript --> 
